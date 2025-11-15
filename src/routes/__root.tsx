@@ -7,9 +7,11 @@ import Footer from '../components/Footer'
 
 export const Route = createRootRoute({
   component: () => (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
       <Footer />
       <TanStackDevtools
         config={{
@@ -22,6 +24,6 @@ export const Route = createRootRoute({
           },
         ]}
       />
-    </>
+    </div>
   ),
 });
