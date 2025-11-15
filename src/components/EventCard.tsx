@@ -37,7 +37,7 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
             </span>
           </div>
 
-          <h3 className="text-xl font-semibold leading-tight text-zinc-900 dark:text-white md:line-clamp-1">
+          <h3 className="text:lg md:text-xl font-semibold leading-tight text-zinc-900 dark:text-white md:line-clamp-1">
             {event.name}
           </h3>
         </div>
