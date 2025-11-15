@@ -117,14 +117,14 @@ function EventDetailComponent() {
               className="text-foreground text-2xl md:text-3xl font-bold text-center mb-6"
               {...fadeUp}
             >
-              Our Sponsors
+              {event.sponsors.length > 1 ? "Our Sponsors" : "Our Sponsor"}
             </motion.h2>
 
             {(() => {
               const sponsors = event.sponsors;
               const numSponsors = sponsors.length;
               const imgClasses =
-                "w-full h-35 object-contain rounded-lg  transition-transform duration-300  p-4 ";
+                "w-full h-30 object-contain rounded-lg transition-transform duration-300 p-4";
 
               if (numSponsors === 1)
                 return (
@@ -216,21 +216,21 @@ function EventDetailComponent() {
 
         <hr className="w-full border-t border-border my-8" />
 
-        {/* Event Photos Grid */}
+        {/* Event Gallery Grid */}
         {event.gallery && event.gallery.length > 0 && (
           <motion.div {...fadeUp}>
             <motion.h3
               className="text-2xl md:text-3xl font-bold text-center mb-6"
               {...fadeUp}
             >
-              Event Photos
+              Event Gallery
             </motion.h3>
 
             {(() => {
               const photos = event.gallery;
               const numPhotos = photos.length;
               const imgClasses =
-                "w-full h-40 md:h-80 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2";
+                "w-full h-40 md:h-80 object-cover object-center rounded-lg p-1";
 
               if (numPhotos === 1)
                 return (
@@ -239,7 +239,7 @@ function EventDetailComponent() {
                       src={photos[0]}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-40 md:h-100 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2"
+                      className="w-full md:w-1/2 object-contain rounded-lg"
                       {...fadeUp}
                     />
                   </motion.div>
@@ -249,7 +249,7 @@ function EventDetailComponent() {
                 return (
                   <motion.div
                     {...fadeUp}
-                    className="flex flex-col items-center gap-4 max-w-2xl mx-auto"
+                    className="grid grid-cols-2 gap-2 max-w-6xl mx-auto"
                   >
                     {photos.map((p: string, i: number) => (
                       <motion.img
@@ -264,58 +264,63 @@ function EventDetailComponent() {
                   </motion.div>
                 );
 
-              if (numPhotos === 3)
+              // For odd numbers of photos - last image centered, rest in pairs
+              if (numPhotos % 2 !== 0)
                 return (
                   <motion.div
                     {...fadeUp}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto"
+                    className="grid gap-2 max-w-6xl mx-auto"
                   >
-                    <motion.img
-                      src={photos[0]}
-                      loading="lazy"
-                      decoding="async"
-                      className={imgClasses}
-                      {...fadeUp}
-                    />
-                    <motion.img
-                      src={photos[1]}
-                      loading="lazy"
-                      decoding="async"
-                      className={imgClasses}
-                      {...fadeUp}
-                    />
-                    <div className="sm:col-span-2 flex justify-center">
+                    {photos.slice(0, -1).map((_p: string, i: number) => (
+                      i % 2 === 0 && (
+                        <div key={`row-${i}`} className="grid grid-cols-2 gap-2">
+                          <motion.img
+                            src={photos[i]}
+                            loading="lazy"
+                            decoding="async"
+                            className={imgClasses}
+                            {...fadeUp}
+                          />
+                          <motion.img
+                            src={photos[i + 1]}
+                            loading="lazy"
+                            decoding="async"
+                            className={imgClasses}
+                            {...fadeUp}
+                          />
+                        </div>
+                      )
+                    ))}
+                    <div className="flex justify-center">
                       <motion.img
-                        src={photos[2]}
+                        src={photos[numPhotos - 1]}
                         loading="lazy"
                         decoding="async"
-                        className="w-full sm:w-1/2 object-cover transition-transform duration-300 hover:scale-101 rounded-lg p-2"
+                        className="w-full sm:w-1/2 h-40 md:h-80 object-cover object-center rounded-lg"
                         {...fadeUp}
                       />
                     </div>
                   </motion.div>
                 );
 
-              if (numPhotos >= 4)
-                return (
-                  <motion.div
-                    {...fadeUp}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-                  >
-                    {photos.slice(0, 4).map((p: string, i: number) => (
-                      <motion.img
-                        key={i}
-                        src={p}
-                        loading="lazy"
-                        decoding="async"
-                        className={imgClasses}
-                        {...fadeUp}
-                      />
-                    ))}
-                  </motion.div>
-                );
-
-              return null;
+              // For even number of photos - all in pairs
+              return (
+                <motion.div
+                  {...fadeUp}
+                  className="grid grid-cols-2 gap-2 max-w-6xl mx-auto"
+                >
+                  {photos.map((p: string, i: number) => (
+                    <motion.img
+                      key={i}
+                      src={p}
+                      loading="lazy"
+                      decoding="async"
+                      className={imgClasses}
+                      {...fadeUp}
+                    />
+                  ))}
+                </motion.div>
+              );
             })()}
           </motion.div>
         )}
