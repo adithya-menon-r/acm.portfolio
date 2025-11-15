@@ -10,7 +10,7 @@ const fadeUp: MotionProps = {
   viewport: { once: true, amount: 0.3 },
   transition: {
     duration: 1.0,
-    ease: [0.33, 1, 0.68, 1], 
+    ease: [0.33, 1, 0.68, 1],
   },
 };
 
@@ -29,7 +29,6 @@ function EventDetailComponent() {
   return (
     <div className="bg-background text-foreground min-h-screen py-6">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Main Event Image */}
         <motion.div {...fadeUp} className="mb-8">
           <motion.img
@@ -85,7 +84,7 @@ function EventDetailComponent() {
         <hr className="w-full border-t border-border my-8" />
 
         {/* Stats */}
-        {event.stats && event.stats.length > 0 &&  (
+        {event.stats && event.stats.length > 0 && (
           <motion.div {...fadeUp} className="w-full mb-4">
             <motion.div
               {...fadeUp}
@@ -123,7 +122,11 @@ function EventDetailComponent() {
               if (numSponsors === 1)
                 return (
                   <motion.div {...fadeUp} className="max-w-2xl mx-auto">
-                    <motion.img src={sponsors[0]} className={imgClasses} {...fadeUp} />
+                    <motion.img
+                      src={sponsors[0]}
+                      className={imgClasses}
+                      {...fadeUp}
+                    />
                   </motion.div>
                 );
 
@@ -134,7 +137,12 @@ function EventDetailComponent() {
                     className="flex flex-col items-center gap-4 max-w-2xl mx-auto"
                   >
                     {sponsors.map((s, i) => (
-                      <motion.img key={i} src={s} className={imgClasses} {...fadeUp} />
+                      <motion.img
+                        key={i}
+                        src={s}
+                        className={imgClasses}
+                        {...fadeUp}
+                      />
                     ))}
                   </motion.div>
                 );
@@ -145,8 +153,16 @@ function EventDetailComponent() {
                     {...fadeUp}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto"
                   >
-                    <motion.img src={sponsors[0]} className={imgClasses} {...fadeUp} />
-                    <motion.img src={sponsors[1]} className={imgClasses} {...fadeUp} />
+                    <motion.img
+                      src={sponsors[0]}
+                      className={imgClasses}
+                      {...fadeUp}
+                    />
+                    <motion.img
+                      src={sponsors[1]}
+                      className={imgClasses}
+                      {...fadeUp}
+                    />
                     <div className="sm:col-span-2 flex justify-center">
                       <motion.img
                         src={sponsors[2]}
@@ -164,7 +180,12 @@ function EventDetailComponent() {
                     className="grid grid-cols-2 gap-4 max-w-4xl mx-auto"
                   >
                     {sponsors.slice(0, 4).map((s, i) => (
-                      <motion.img key={i} src={s} className={imgClasses} {...fadeUp} />
+                      <motion.img
+                        key={i}
+                        src={s}
+                        className={imgClasses}
+                        {...fadeUp}
+                      />
                     ))}
                   </motion.div>
                 );
@@ -195,7 +216,11 @@ function EventDetailComponent() {
               if (numPhotos === 1)
                 return (
                   <motion.div {...fadeUp} className="flex justify-center">
-                    <motion.img src={photos[0]} className="w-full h-40 md:h-100 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2" {...fadeUp} />
+                    <motion.img
+                      src={photos[0]}
+                      className="w-full h-40 md:h-100 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2"
+                      {...fadeUp}
+                    />
                   </motion.div>
                 );
 
@@ -206,7 +231,12 @@ function EventDetailComponent() {
                     className="flex flex-col items-center gap-4 max-w-2xl mx-auto"
                   >
                     {photos.map((p, i) => (
-                      <motion.img key={i} src={p} className={imgClasses} {...fadeUp} />
+                      <motion.img
+                        key={i}
+                        src={p}
+                        className={imgClasses}
+                        {...fadeUp}
+                      />
                     ))}
                   </motion.div>
                 );
@@ -217,8 +247,16 @@ function EventDetailComponent() {
                     {...fadeUp}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto"
                   >
-                    <motion.img src={photos[0]} className={imgClasses} {...fadeUp} />
-                    <motion.img src={photos[1]} className={imgClasses} {...fadeUp} />
+                    <motion.img
+                      src={photos[0]}
+                      className={imgClasses}
+                      {...fadeUp}
+                    />
+                    <motion.img
+                      src={photos[1]}
+                      className={imgClasses}
+                      {...fadeUp}
+                    />
                     <div className="sm:col-span-2 flex justify-center">
                       <motion.img
                         src={photos[2]}
@@ -236,7 +274,12 @@ function EventDetailComponent() {
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                   >
                     {photos.slice(0, 4).map((p, i) => (
-                      <motion.img key={i} src={p} className={imgClasses} {...fadeUp} />
+                      <motion.img
+                        key={i}
+                        src={p}
+                        className={imgClasses}
+                        {...fadeUp}
+                      />
                     ))}
                   </motion.div>
                 );
