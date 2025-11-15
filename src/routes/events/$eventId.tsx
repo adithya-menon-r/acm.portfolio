@@ -90,11 +90,16 @@ function EventDetailComponent() {
               {...fadeUp}
               className="flex flex-row flex-wrap gap-x-8 gap-y-4 justify-center"
             >
-              {event.stats.map((stat: { value: number; prefix?: string; suffix?: string }, index: number) => (
-                <motion.div key={index} {...fadeUp}>
-                  <AnimatedStat stat={stat} />
-                </motion.div>
-              ))}
+              {event.stats.map(
+                (
+                  stat: { value: number; prefix?: string; suffix?: string },
+                  index: number,
+                ) => (
+                  <motion.div key={index} {...fadeUp}>
+                    <AnimatedStat stat={stat} />
+                  </motion.div>
+                ),
+              )}
             </motion.div>
           </motion.div>
         )}
