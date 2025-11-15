@@ -230,7 +230,7 @@ function EventDetailComponent() {
               const photos = event.gallery;
               const numPhotos = photos.length;
               const imgClasses =
-                "w-full h-40 md:h-80 object-cover object-center rounded-lg p-1";
+                "w-full h-60 md:h-80 object-cover object-center rounded-lg p-1";
 
               if (numPhotos === 1)
                 return (
@@ -249,7 +249,7 @@ function EventDetailComponent() {
                 return (
                   <motion.div
                     {...fadeUp}
-                    className="grid grid-cols-2 gap-2 max-w-6xl mx-auto"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-6xl mx-auto"
                   >
                     {photos.map((p: string, i: number) => (
                       <motion.img
@@ -273,7 +273,7 @@ function EventDetailComponent() {
                   >
                     {photos.slice(0, -1).map((_p: string, i: number) => (
                       i % 2 === 0 && (
-                        <div key={`row-${i}`} className="grid grid-cols-2 gap-2">
+                        <div key={`row-${i}`} className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           <motion.img
                             src={photos[i]}
                             loading="lazy"
@@ -296,7 +296,7 @@ function EventDetailComponent() {
                         src={photos[numPhotos - 1]}
                         loading="lazy"
                         decoding="async"
-                        className="w-full sm:w-1/2 h-40 md:h-80 object-cover object-center rounded-lg"
+                        className="w-full md:w-1/2 h-60 md:h-80 object-cover object-center rounded-lg"
                         {...fadeUp}
                       />
                     </div>
@@ -307,7 +307,7 @@ function EventDetailComponent() {
               return (
                 <motion.div
                   {...fadeUp}
-                  className="grid grid-cols-2 gap-2 max-w-6xl mx-auto"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-6xl mx-auto"
                 >
                   {photos.map((p: string, i: number) => (
                     <motion.img

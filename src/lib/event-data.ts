@@ -55,7 +55,7 @@ export const eventDb: Record<string, Event> = {
     report:
       "The Winter of Code held at ACM Amrita!, this was an open-source coding challenge to the participants. Developers contributed to a range of exciting projects, collaborating, and pushed their skills to new heights. A gamified leaderboard system kept the competition fierce, with participants vying for top spots through consistent contributions and innovative solutions. The event not only fostered a spirit of community and learning but also highlighted the power of open-source collaboration in driving technological advancement.",
     mainImage: "/events/winter-of-code-24-25/woc-24-25-1.JPG",
-    stats: [{ prefix: "A Turnout Of Over  ", value: 280, suffix: " Students" }],
+    stats: [{ prefix: "A Turnout of Over  ", value: 280, suffix: " Students" }],
     gallery: [
       "/events/winter-of-code-24-25/woc-24-25-2.JPG",
       "/events/winter-of-code-24-25/woc-24-25-3.JPG",
