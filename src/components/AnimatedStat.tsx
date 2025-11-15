@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import type { StatItem } from "@/lib/event-data";
 
-// ScramblingDigit Component 
+// ScramblingDigit Component
 interface ScramblingDigitProps {
   targetDigit: string;
   scrambleDuration: number;
@@ -58,7 +58,7 @@ function ScramblingDigit({
   );
 }
 
-// AnimatedStat Component 
+// AnimatedStat Component
 interface AnimatedStatProps {
   stat: StatItem;
 }
@@ -83,7 +83,7 @@ export function AnimatedStat({ stat }: AnimatedStatProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     observer.observe(node);
@@ -96,7 +96,6 @@ export function AnimatedStat({ stat }: AnimatedStatProps) {
       className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 p-2"
       ref={statRef}
     >
-
       {/* Prefix*/}
       {stat.prefix && (
         <span className="text-xl md:text-2xl  font-semibold text-foreground">
