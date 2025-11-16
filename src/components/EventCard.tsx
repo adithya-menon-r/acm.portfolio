@@ -12,13 +12,13 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
           <ArrowUpRight className="w-5 h-5 text-zinc-900 dark:text-white" />
         </div>
 
-        <div className="relative w-full overflow-hidden leading-[0]" style={{ paddingBottom: '56.25%' }}>
+        <div className="relative w-full overflow-hidden aspect-[16/9] leading-[0] bg-zinc-200 dark:bg-zinc-700">
           <img
             src={event.mainImage}
             alt={event.name}
             loading="eager"
-            fetchPriority="high"
-            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105"
+            decoding="sync"
+            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 block"
           />
         </div>
 
