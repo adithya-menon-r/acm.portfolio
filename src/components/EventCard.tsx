@@ -16,7 +16,8 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
           <img
             src={event.mainImage}
             alt={event.name}
-            className="absolute inset-0 object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105"
+            loading="eager"
+            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105"
           />
         </div>
 
