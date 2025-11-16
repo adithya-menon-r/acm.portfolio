@@ -1,19 +1,17 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-import { EventCard } from '@/components/EventCard'
+import { EventCard } from "@/components/EventCard";
 
-import { eventDb } from '@/lib/event-data'
+import { eventDb } from "@/lib/event-data";
 
-export const Route = createFileRoute('/events/')({
+export const Route = createFileRoute("/events/")({
   component: RouteComponent,
-})
-
+});
 
 function RouteComponent() {
-  const events = Object.entries(eventDb).sort(
-  ([, eventA], [, eventB]) =>
-    eventB.sortDate.localeCompare(eventA.sortDate)
-);
+  const events = Object.entries(eventDb).sort(([, eventA], [, eventB]) =>
+    eventB.sortDate.localeCompare(eventA.sortDate),
+  );
   return (
     <div className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white min-h-screen font-sans">
       <div className="container p-4 mx-auto md:p-8">
@@ -30,8 +28,7 @@ function RouteComponent() {
             ))}
           </div>
         </section>
-
       </div>
     </div>
-  )
+  );
 }

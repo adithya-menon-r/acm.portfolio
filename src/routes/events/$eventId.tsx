@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { NotFound } from '@/components/NotFound'
+import { NotFound } from "@/components/NotFound";
 import { eventDb } from "@/lib/event-data";
 import { AnimatedStat } from "@/components/AnimatedStat";
 import { motion, type MotionProps } from "framer-motion";
@@ -273,26 +273,30 @@ function EventDetailComponent() {
                     {...fadeUp}
                     className="grid gap-2 max-w-6xl mx-auto"
                   >
-                    {photos.slice(0, -1).map((_p: string, i: number) => (
-                      i % 2 === 0 && (
-                        <div key={`row-${i}`} className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                          <motion.img
-                            src={photos[i]}
-                            loading="lazy"
-                            decoding="async"
-                            className={imgClasses}
-                            {...fadeUp}
-                          />
-                          <motion.img
-                            src={photos[i + 1]}
-                            loading="lazy"
-                            decoding="async"
-                            className={imgClasses}
-                            {...fadeUp}
-                          />
-                        </div>
-                      )
-                    ))}
+                    {photos.slice(0, -1).map(
+                      (_p: string, i: number) =>
+                        i % 2 === 0 && (
+                          <div
+                            key={`row-${i}`}
+                            className="grid grid-cols-1 md:grid-cols-2 gap-2"
+                          >
+                            <motion.img
+                              src={photos[i]}
+                              loading="lazy"
+                              decoding="async"
+                              className={imgClasses}
+                              {...fadeUp}
+                            />
+                            <motion.img
+                              src={photos[i + 1]}
+                              loading="lazy"
+                              decoding="async"
+                              className={imgClasses}
+                              {...fadeUp}
+                            />
+                          </div>
+                        ),
+                    )}
                     <div className="flex justify-center">
                       <motion.img
                         src={photos[numPhotos - 1]}
