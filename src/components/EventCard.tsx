@@ -19,6 +19,8 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
 
         <div className="relative overflow-hidden aspect-[16/9] leading-[0]">
           <img
+            width="1600"
+            height="900"
             src={event.mainImage}
             alt={event.name}
             className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 block"
