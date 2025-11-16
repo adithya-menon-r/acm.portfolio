@@ -36,7 +36,7 @@ export const eventDb: Record<string, Event> = {
     //events/backend-development-workshop is the route
     name: "Backend Development Workshop",
     category: "Workshop",
-    sortDate: "2025-07-24",
+    sortDate: "2024-07-24",
     displayDate: "24/07/2024 - 25/07/2024",
     details: "24-25th July 2024 | Academic Block 3",
     report:
