@@ -119,7 +119,7 @@ function EventDetailComponent() {
               className="text-foreground text-2xl md:text-3xl font-bold text-center mb-6"
               {...fadeUp}
             >
-              {event.sponsors.length > 1 ? "Our Sponsors" : "Our Sponsor"}
+              {event.sponsors.length > 1 ? "Event Sponsors" : "Event Sponsor"}
             </motion.h2>
 
             {(() => {
