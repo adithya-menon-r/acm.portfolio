@@ -1,4 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { NotFound } from '@/components/NotFound'
 import { eventDb } from "@/lib/event-data";
 import { AnimatedStat } from "@/components/AnimatedStat";
 import { motion, type MotionProps } from "framer-motion";
@@ -21,6 +22,7 @@ export const Route = createFileRoute("/events/$eventId")({
     return event;
   },
   component: EventDetailComponent,
+  notFoundComponent: () => <NotFound />,
 });
 
 function EventDetailComponent() {
