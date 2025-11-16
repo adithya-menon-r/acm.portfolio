@@ -12,10 +12,7 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
           <ArrowUpRight className="w-5 h-5 text-zinc-900 dark:text-white" />
         </div>
 
-        <div 
-          className="relative w-full overflow-hidden leading-[0] bg-zinc-200 dark:bg-zinc-700"
-          style={{ aspectRatio: '16 / 9' }}
-        >
+        <div className="relative w-full h-48 md:h-64 overflow-hidden leading-[0] bg-zinc-200 dark:bg-zinc-700">
           <img
             src={event.mainImage}
             alt={event.name}
