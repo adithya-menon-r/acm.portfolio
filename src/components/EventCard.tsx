@@ -12,13 +12,11 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
           <ArrowUpRight className="w-5 h-5 text-zinc-900 dark:text-white" />
         </div>
 
-        <div className="relative overflow-hidden aspect-[16/9] leading-[0]">
+        <div className="relative w-full overflow-hidden aspect-[16/9] leading-[0]">
           <img
-            width="1600"
-            height="900"
             src={event.mainImage}
             alt={event.name}
-            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 block"
+            className="absolute inset-0 object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105"
           />
         </div>
 
@@ -34,7 +32,7 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
             </span>
           </div>
 
-          <h3 className="text:lg md:text-xl font-bold leading-tight text-zinc-900 dark:text-white md:line-clamp-1">
+          <h3 className="text-lg md:text-xl font-bold leading-tight text-zinc-900 dark:text-white md:line-clamp-1">
             {event.name}
           </h3>
         </div>
