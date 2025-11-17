@@ -17,19 +17,19 @@ export default function TeamCard(props: {
     <a
       href={social}
       target="_blank"
-      className={`${type === "large" ? "w-70 h-80 flex-col hover:shadow-2xl" : "w-65 h-20 justify-center items-center border-black gap-3 hover:shadow-xl"} border flex select-none items-center rounded-2xl overflow-hidden relative transition-all ease-in-out duration-500 group`}
+      className={`${type === "large" ? "w-70 h-80 flex-col hover:shadow-md" : "w-65 h-20 justify-center items-center border-black gap-3 hover:shadow-sm"} border flex select-none items-center rounded-2xl overflow-hidden relative transition-all ease-in-out duration-500 group`}
     >
       <div
         className={`${type === "large" ? "w-full h-full" : "w-15 h-15 border rounded-full border-blue-500"} overflow-hidden pointer-events-none`}
       >
         <img
-          className="w-full h-full object-cover group-hover:scale-110 transition-all ease-in-out duration-500"
+          className="w-full h-full object-cover group-hover:scale-102 transition-all ease-in-out duration-500"
           src={photo ?? placeholder}
           alt={name}
         />
       </div>
 
-      <div className="w-10 h-10 flex justify-center items-center absolute opacity-0 right-2 top-2 group-hover:opacity-100 group-hover:right-5 group-hover:top-5 bg-white shadow-[0px_0px_200px_50px_#000000] rounded-full transition-all ease-in-out duration-500 pointer-events-none">
+      <div className="w-10 h-10 flex justify-center items-center absolute opacity-0 right-2 top-2 group-hover:opacity-100 group-hover:right-3 group-hover:top-3 bg-white shadow-md rounded-full transition-all ease-in-out duration-500 pointer-events-none">
         <ExternalLink size={18} color="#000000" />
       </div>
 
@@ -48,7 +48,7 @@ export default function TeamCard(props: {
 
       {type === "large" && (
         <div
-          className={`flex justify-center px-5 items-center w-[92%] h-15 bg-white shadow-2xl absolute bottom-3 rounded-xl`}
+          className={`flex justify-center px-5 items-center w-[92%] h-15 bg-white shadow-md absolute bottom-3 rounded-xl`}
         >
           <span className="text-center">
             <p className="text-[0.95rem] leading-tight font-sans font-bold text-black">
