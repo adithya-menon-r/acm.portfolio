@@ -9,11 +9,11 @@ export default function Header() {
     "transition-all duration-200 ease-in-out hover:scale-103";
 
   const inactiveLinkProps = {
-    className: `text-black hover:text-cyan-600 ${baseLinkClasses}`,
+    className: `text-black opacity-60 hover:opacity-100 hover:text-black ${baseLinkClasses}`,
   };
 
   const activeLinkProps = {
-    className: `text-cyan-600 font-semibold ${baseLinkClasses} hover:text-cyan-600`,
+    className: `text-black font-bold opacity-100 ${baseLinkClasses}`,
   };
 
   return (
@@ -70,7 +70,7 @@ export default function Header() {
             className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
             activeProps={{
               className:
-                "flex items-center gap-3 py-3 rounded-lg bg-cyan-50 text-cyan-600 font-medium",
+                "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
             }}
           >
             <Home size={20} />
@@ -82,7 +82,7 @@ export default function Header() {
             className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
             activeProps={{
               className:
-                "flex items-center gap-3 py-3 rounded-lg bg-cyan-50 text-cyan-600 font-medium",
+                "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
             }}
           >
             <Calendar size={20} />
@@ -94,7 +94,7 @@ export default function Header() {
             className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
             activeProps={{
               className:
-                "flex items-center gap-3 py-3 rounded-lg bg-cyan-50 text-cyan-600 font-medium",
+                "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
             }}
           >
             <Users size={20} />

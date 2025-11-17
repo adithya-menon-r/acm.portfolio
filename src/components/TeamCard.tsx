@@ -1,7 +1,7 @@
 import { Calendar } from "lucide-react";
 import type { Person } from "@/lib/team-details";
 
-export default function Card(props: {
+export default function TeamCard(props: {
   person: Person;
   type: "large" | "small";
   category: "faculty" | "student";

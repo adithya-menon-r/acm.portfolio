@@ -227,7 +227,7 @@ export const eventDb: Record<string, Event> = {
     //events/defang-io-hackathon is the route
     name: "Defang.io Hackathon 2025",
     category: "Hackathon",
-    sortDate:"2025/09/17",
+    sortDate: "2025/09/17",
     displayDate: "17/09/2025",
     details: "17th September 2025 | Anugraha Hall, Academic Block 3",
     report:
