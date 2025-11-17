@@ -8,10 +8,18 @@ export const Route = createFileRoute("/team/")({
 
 function RouteComponent() {
   return (
-    <section className="flex flex-col justify-center items-center gap-5 pt-20 py-15">
+    <section className="flex flex-col justify-center items-center gap-5 pt-8 py-15">
       <section className="w-full h-fit flex flex-col items-center justify-center">
         <section className="flex flex-col justify-center items-center gap-7">
-          <p className="text-3xl font-sans font-bold">Our Guides & Mentors</p>
+          <p
+            className="text-3xl md:text-4xl font-sans font-bold mb-4"
+            style={{
+              fontFamily:
+                'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
+            }}
+          >
+            Our Guides & Mentors
+          </p>
 
           <div className="grid grid-cols-3 max-[942px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7">
             {Faculty.map((faculty) => (
@@ -26,9 +34,17 @@ function RouteComponent() {
         </section>
       </section>
 
-      <section className="w-full h-fit pt-10 flex flex-col items-center justify-center">
+      <section className="w-full h-fit pt-16 flex flex-col items-center justify-center">
         <section className="flex flex-col justify-center items-center gap-7">
-          <p className="text-3xl font-sans font-bold">Core Team</p>
+          <p
+            className="text-3xl md:text-4xl font-sans font-bold mb-4"
+            style={{
+              fontFamily:
+                'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
+            }}
+          >
+            Core Team
+          </p>
 
           <div className="grid grid-cols-4 max-[1246px]:grid-cols-3 max-[932px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7">
             {CoreTeam.map((coreteam) => (

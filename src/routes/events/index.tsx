@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 import { EventCard } from "@/components/EventCard";
-
 import { eventDb } from "@/lib/event-data";
 
 export const Route = createFileRoute("/events/")({
@@ -13,10 +11,16 @@ function RouteComponent() {
     eventB.sortDate.localeCompare(eventA.sortDate),
   );
   return (
-    <div className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white min-h-screen font-sans">
+    <div className="text-zinc-900 min-h-screen">
       <div className="container p-4 mx-auto md:p-8">
-        <section className="pt-2 pb-10 text-center md:pt-4 md:pb-14">
-          <h1 className="text-3xl font-extrabold tracking-wide md:text-5xl text-zinc-700 dark:text-zinc-300">
+        <section className="pb-10 text-center md:pb-14">
+          <h1
+            className="text-4xl md:text-3xl font-bold tracking-wide md:text-5xl"
+            style={{
+              fontFamily:
+                'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
+            }}
+          >
             Our Past Events
           </h1>
         </section>

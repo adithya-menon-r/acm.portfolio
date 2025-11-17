@@ -1,9 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Home, Menu, X, Users, Calendar } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const baseLinkClasses =
     "transition-all duration-200 ease-in-out hover:scale-103";
@@ -18,14 +28,32 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 p-4 flex items-center justify-between bg-white text-black shadow-md">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="flex items-center gap-3">
-            <img src="/acm_logo.png" alt="ACM Logo" className="h-10" />
-            <img src="/amrita_logo.svg" alt="Amrita Logo" className="h-8" />
+      <header
+        className={`fixed z-50 p-3 md:py-2 md:px-6 flex items-center justify-between text-black transition-all duration-300 mx-2 md:mx-4 w-auto left-0 right-0
+        ${
+          isScrolled
+            ? "top-2 rounded-2xl shadow-xl bg-white backdrop-blur-md border border-zinc-200"
+            : "top-0 bg-transparent rounded-none shadow-none border-none"
+        }
+        `}
+        style={{
+          left: 0,
+          right: 0,
+          transitionProperty: "all",
+          transitionDuration: "300ms",
+        }}
+      >
+        <div className="flex items-center gap-4 h-12">
+          <Link to="/" className="flex items-center gap-3 h-full">
+            <img src="/acm_logo.png" alt="ACM Logo" className="h-10 my-auto" />
+            <img
+              src="/amrita_logo.svg"
+              alt="Amrita Logo"
+              className="h-8 my-auto"
+            />
           </Link>
         </div>
-        <nav className="hidden md:flex items-center gap-6 text-md font-medium text-black">
+        <nav className="hidden md:flex items-center gap-6 text-lg font-medium text-black">
           <Link
             to="/"
             activeProps={activeLinkProps}

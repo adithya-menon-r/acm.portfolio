@@ -29,7 +29,7 @@ function EventDetailComponent() {
   const event = Route.useLoaderData();
 
   return (
-    <div className="bg-background text-foreground py-6">
+    <div className="text-foreground py-6">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Event Image */}
         <motion.div {...fadeUp} className="mb-8">
