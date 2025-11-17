@@ -13,9 +13,9 @@ function RouteComponent() {
   return (
     <div className="text-zinc-900 min-h-screen">
       <div className="container p-4 mx-auto md:p-8">
-        <section className="pb-10 text-center md:pb-14">
+        <section className="pb-8 text-center md:pb-10">
           <h1
-            className="text-4xl md:text-3xl font-bold tracking-wide md:text-5xl"
+            className="text-3xl md:text-2xl font-bold md:text-5xl"
             style={{
               fontFamily:
                 'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
@@ -26,7 +26,7 @@ function RouteComponent() {
         </section>
 
         <section className="mb-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-5xl mx-auto">
             {events.map(([slug, event]) => (
               <EventCard key={slug} slug={slug} event={event} />
             ))}
