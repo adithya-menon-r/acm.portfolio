@@ -1,17 +1,12 @@
-import { Card } from '@/components/ui/card'
-import { CalendarDays, Tag, ArrowUpRight } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
+import { Card } from "@/components/ui/card";
+import { CalendarDays, Tag, ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
-import { type Event } from '@/lib/event-data'
+import { type Event } from "@/lib/event-data";
 
 export function EventCard({ slug, event }: { slug: string; event: Event }) {
-
   return (
-    <Link
-      to="/events/$eventId"
-      params={{ eventId: slug }}
-      className="group"
-    >
+    <Link to="/events/$eventId" params={{ eventId: slug }} className="group">
       <Card className="overflow-hidden transition-all duration-300 ease-out cursor-pointer hover:scale-[1.01] hover:shadow-lg border border-zinc-200 dark:border-zinc-800 rounded-lg md:rounded-xl bg-white dark:bg-zinc-800 p-0">
         <div className="absolute top-4 right-4 z-20 flex items-center justify-center w-10 h-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-full opacity-0 translate-x-2 -translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
           <ArrowUpRight className="w-5 h-5 text-zinc-900 dark:text-white" />
@@ -43,5 +38,5 @@ export function EventCard({ slug, event }: { slug: string; event: Event }) {
         </div>
       </Card>
     </Link>
-  )
+  );
 }

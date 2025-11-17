@@ -1,4 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { NotFound } from "@/components/NotFound";
 import { eventDb } from "@/lib/event-data";
 import { AnimatedStat } from "@/components/AnimatedStat";
 import { motion, type MotionProps } from "framer-motion";
@@ -21,6 +22,7 @@ export const Route = createFileRoute("/events/$eventId")({
     return event;
   },
   component: EventDetailComponent,
+  notFoundComponent: () => <NotFound />,
 });
 
 function EventDetailComponent() {
@@ -112,105 +114,35 @@ function EventDetailComponent() {
         )}
 
         {event.sponsors && event.sponsors.length > 0 && (
-          <motion.div {...fadeUp} className="mb-12">
+          <motion.div {...fadeUp} className="mb-6">
             <motion.h2
               className="text-foreground text-2xl md:text-3xl font-bold text-center mb-6"
               {...fadeUp}
             >
-              {event.sponsors.length > 1 ? "Our Sponsors" : "Our Sponsor"}
+              {event.sponsors.length > 1 ? "Event Sponsors" : "Event Sponsor"}
             </motion.h2>
 
-            {(() => {
-              const sponsors = event.sponsors;
-              const numSponsors = sponsors.length;
-              const imgClasses =
-                "w-full h-30 object-contain rounded-lg transition-transform duration-300 p-4";
-
-              if (numSponsors === 1)
-                return (
-                  <motion.div {...fadeUp} className="max-w-2xl mx-auto">
-                    <motion.img
-                      src={sponsors[0]}
-                      loading="lazy"
-                      decoding="async"
-                      className={imgClasses}
-                      {...fadeUp}
-                    />
-                  </motion.div>
-                );
-
-              if (numSponsors === 2)
-                return (
-                  <motion.div
+            <motion.div
+              {...fadeUp}
+              className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-6xl mx-auto"
+            >
+              {event.sponsors.map((sponsor: string, index: number) => (
+                <motion.div
+                  key={index}
+                  {...fadeUp}
+                  className="w-40 sm:w-48 md:w-56 lg:w-64"
+                >
+                  <motion.img
+                    src={sponsor}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto object-contain rounded-lg transition-transform duration-300 hover:scale-105 p-4"
+                    alt={`Sponsor ${index + 1}`}
                     {...fadeUp}
-                    className="flex flex-col items-center gap-4 max-w-2xl mx-auto"
-                  >
-                    {sponsors.map((s: string, i: number) => (
-                      <motion.img
-                        key={i}
-                        src={s}
-                        loading="lazy"
-                        decoding="async"
-                        className={imgClasses}
-                        {...fadeUp}
-                      />
-                    ))}
-                  </motion.div>
-                );
-
-              if (numSponsors === 3)
-                return (
-                  <motion.div
-                    {...fadeUp}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto"
-                  >
-                    <motion.img
-                      src={sponsors[0]}
-                      loading="lazy"
-                      decoding="async"
-                      className={imgClasses}
-                      {...fadeUp}
-                    />
-                    <motion.img
-                      src={sponsors[1]}
-                      loading="lazy"
-                      decoding="async"
-                      className={imgClasses}
-                      {...fadeUp}
-                    />
-                    <div className="sm:col-span-2 flex justify-center">
-                      <motion.img
-                        src={sponsors[2]}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full sm:w-1/2 object-contain rounded-lg p-4 border border-border"
-                        {...fadeUp}
-                      />
-                    </div>
-                  </motion.div>
-                );
-
-              if (numSponsors >= 4)
-                return (
-                  <motion.div
-                    {...fadeUp}
-                    className="grid grid-cols-2 gap-4 max-w-4xl mx-auto"
-                  >
-                    {sponsors.slice(0, 4).map((s: string, i: number) => (
-                      <motion.img
-                        key={i}
-                        src={s}
-                        loading="lazy"
-                        decoding="async"
-                        className={imgClasses}
-                        {...fadeUp}
-                      />
-                    ))}
-                  </motion.div>
-                );
-
-              return null;
-            })()}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         )}
 
@@ -271,26 +203,30 @@ function EventDetailComponent() {
                     {...fadeUp}
                     className="grid gap-2 max-w-6xl mx-auto"
                   >
-                    {photos.slice(0, -1).map((_p: string, i: number) => (
-                      i % 2 === 0 && (
-                        <div key={`row-${i}`} className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                          <motion.img
-                            src={photos[i]}
-                            loading="lazy"
-                            decoding="async"
-                            className={imgClasses}
-                            {...fadeUp}
-                          />
-                          <motion.img
-                            src={photos[i + 1]}
-                            loading="lazy"
-                            decoding="async"
-                            className={imgClasses}
-                            {...fadeUp}
-                          />
-                        </div>
-                      )
-                    ))}
+                    {photos.slice(0, -1).map(
+                      (_p: string, i: number) =>
+                        i % 2 === 0 && (
+                          <div
+                            key={`row-${i}`}
+                            className="grid grid-cols-1 md:grid-cols-2 gap-2"
+                          >
+                            <motion.img
+                              src={photos[i]}
+                              loading="lazy"
+                              decoding="async"
+                              className={imgClasses}
+                              {...fadeUp}
+                            />
+                            <motion.img
+                              src={photos[i + 1]}
+                              loading="lazy"
+                              decoding="async"
+                              className={imgClasses}
+                              {...fadeUp}
+                            />
+                          </div>
+                        ),
+                    )}
                     <div className="flex justify-center">
                       <motion.img
                         src={photos[numPhotos - 1]}
