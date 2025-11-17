@@ -1,4 +1,4 @@
-import { Calendar } from "lucide-react";
+import { Calendar, ExternalLink } from "lucide-react";
 import type { Person } from "@/lib/team-details";
 
 export default function TeamCard(props: {
@@ -17,16 +17,20 @@ export default function TeamCard(props: {
     <a
       href={social}
       target="_blank"
-      className={`${type === "large" ? "w-70 h-80 flex-col hover:shadow-2xl" : "w-65 h-20 justify-center items-center border-black gap-3 hover:shadow-xl"} border flex select-none items-center rounded-2xl overflow-hidden relative transition-all ease-in-out duration-500`}
+      className={`${type === "large" ? "w-70 h-80 flex-col hover:shadow-2xl" : "w-65 h-20 justify-center items-center border-black gap-3 hover:shadow-xl"} border flex select-none items-center rounded-2xl overflow-hidden relative transition-all ease-in-out duration-500 group`}
     >
       <div
         className={`${type === "large" ? "w-full h-full" : "w-15 h-15 border rounded-full border-blue-500"} overflow-hidden pointer-events-none`}
       >
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-110 transition-all ease-in-out duration-500"
           src={photo ?? placeholder}
           alt={name}
         />
+      </div>
+
+      <div className="w-10 h-10 flex justify-center items-center absolute opacity-0 right-2 top-2 group-hover:opacity-100 group-hover:right-5 group-hover:top-5 bg-white shadow-[0px_0px_200px_50px_#000000] rounded-full transition-all ease-in-out duration-500 pointer-events-none">
+        <ExternalLink size={18} color="#000000" />
       </div>
 
       {type === "small" && (
