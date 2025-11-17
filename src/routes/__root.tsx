@@ -5,10 +5,10 @@ import { NotFound } from "@/components/NotFound";
 
 export const Route = createRootRoute({
   component: () => (
-    <div className="min-h-screen w-full bg-white relative">
-      <div className="flex flex-col min-h-screen relative z-10">
+    <div className="min-h-screen w-full">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <div className="flex-1 pt-18 md:pt-16">
+        <div className="flex-1 pt-18 md:pt-16 bg-white">
           <Outlet />
         </div>
         <Footer />

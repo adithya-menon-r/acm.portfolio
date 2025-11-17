@@ -11,15 +11,12 @@ function RouteComponent() {
     eventB.sortDate.localeCompare(eventA.sortDate),
   );
   return (
-    <div className="text-zinc-900 min-h-screen">
+    <div className="text-zinc-900">
       <div className="container p-4 mx-auto md:p-8">
         <section className="pb-8 text-center md:pb-10">
           <h1
             className="text-3xl md:text-2xl font-bold md:text-5xl"
-            style={{
-              fontFamily:
-                'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
-            }}
+            style={{ fontFamily: "'Geist Sans', sans-serif" }}
           >
             Our Past Events
           </h1>

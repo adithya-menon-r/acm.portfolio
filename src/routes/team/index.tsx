@@ -8,15 +8,12 @@ export const Route = createFileRoute("/team/")({
 
 function RouteComponent() {
   return (
-    <section className="flex flex-col justify-center items-center gap-5 pt-8 py-15">
+    <section className="flex flex-col justify-center items-center gap-5 pt-8 py-15 min-h-full">
       <section className="w-full h-fit flex flex-col items-center justify-center">
         <section className="flex flex-col justify-center items-center gap-7">
           <p
             className="text-3xl md:text-4xl font-sans font-bold mb-4"
-            style={{
-              fontFamily:
-                'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
-            }}
+            style={{ fontFamily: "'Geist Sans', sans-serif" }}
           >
             Our Guides & Mentors
           </p>
@@ -38,10 +35,7 @@ function RouteComponent() {
         <section className="flex flex-col justify-center items-center gap-7">
           <p
             className="text-3xl md:text-4xl font-sans font-bold mb-4"
-            style={{
-              fontFamily:
-                'Noto Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif',
-            }}
+            style={{ fontFamily: "'Geist Sans', sans-serif" }}
           >
             Core Team
           </p>

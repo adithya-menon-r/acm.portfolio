@@ -1,9 +1,20 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // 1. Imported useEffect
 import { Home, Menu, X, Users, Calendar } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const baseLinkClasses =
     "transition-all duration-200 ease-in-out hover:scale-103";
@@ -19,7 +30,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 p-3 md:py-2 md:px-6 flex items-center justify-between text-black bg-white border-b border-zinc-200 w-full"
+        className={`fixed top-0 left-0 right-0 z-50 p-3 md:py-2 md:px-6 flex items-center justify-between text-black w-full transition-all duration-300
+        ${
+          isScrolled
+            ? "bg-white border-b border-zinc-200"
+            : "bg-transparent border-b border-transparent"
+        }
+        `}
       >
         <div className="flex items-center gap-4 h-12">
           <Link to="/" className="flex items-center gap-3 h-full">
