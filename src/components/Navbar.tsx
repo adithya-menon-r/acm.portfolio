@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { Home, Menu, X, Users, Calendar } from "lucide-react";
 
-export default function Header() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -53,7 +53,7 @@ export default function Header() {
             />
           </Link>
         </div>
-        <nav className="hidden md:flex items-center gap-6 text-lg font-medium text-black">
+        <nav className="hidden md:flex items-center gap-5 text-lg font-medium text-black">
           <Link
             to="/"
             activeProps={activeLinkProps}

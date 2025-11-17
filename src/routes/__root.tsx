@@ -1,5 +1,5 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { NotFound } from "@/components/NotFound";
 
@@ -22,7 +22,7 @@ export const Route = createRootRoute({
         }}
       />
       <div className="flex flex-col min-h-screen relative z-10">
-        <Header />
+        <Navbar />
         <div className="flex-1 pt-18 md:pt-16">
           <Outlet />
         </div>
