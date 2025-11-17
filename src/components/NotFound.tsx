@@ -4,7 +4,7 @@ import { Home } from "lucide-react";
 
 export function NotFound() {
   return (
-    <div className="bg-black text-gray-200 font-mono min-h-[70vh] flex flex-col justify-center items-center p-4 md:p-8">
+    <div className="bg-black text-gray-200 font-mono min-h-[90vh] flex flex-col justify-center items-center p-4 md:p-8">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 w-full max-w-5xl">
         <div className="text-9xl md:text-[12rem] font-extrabold text-gray-200 -mt-8 md:mt-0">
           <span className="whitespace-nowrap tracking-[-0.06em] md:tracking-[-0.08em]">

@@ -1,19 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Home, Menu, X, Users, Calendar } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const baseLinkClasses =
     "transition-all duration-200 ease-in-out hover:scale-103";
@@ -29,19 +19,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed z-50 p-3 md:py-2 md:px-6 flex items-center justify-between text-black transition-all duration-300 mx-2 md:mx-4 w-auto left-0 right-0
-        ${
-          isScrolled
-            ? "top-2 rounded-2xl shadow-xl bg-white backdrop-blur-md border border-zinc-200"
-            : "top-0 bg-transparent rounded-none shadow-none border-none"
-        }
-        `}
-        style={{
-          left: 0,
-          right: 0,
-          transitionProperty: "all",
-          transitionDuration: "300ms",
-        }}
+        className="fixed top-0 left-0 right-0 z-50 p-3 md:py-2 md:px-6 flex items-center justify-between text-black bg-white border-b border-zinc-200 w-full"
       >
         <div className="flex items-center gap-4 h-12">
           <Link to="/" className="flex items-center gap-3 h-full">
@@ -87,7 +65,7 @@ export default function Navbar() {
       </header>
 
       <div
-        className={`md:hidden fixed top-[71px] left-0 w-full bg-white text-black transition-all duration-300 ease-in-out z-50 rounded-b-md ${
+        className={`md:hidden fixed top-[71px] left-0 w-full bg-white text-black transition-all duration-300 ease-in-out z-50 rounded-b-2xl shadow-[0_8px_16px_-4px_rgba(0,0,0,0.18)] ${
           isOpen ? "max-h-96" : "max-h-0"
         } overflow-hidden`}
       >
