@@ -44,7 +44,10 @@ function ScramblingDigit(props: ScramblingDigitProps) {
 
   return plain ? (
     <span
-      className={`font-mono font-semibold mx-0.5 text-foreground ${digitClass}`}
+      className={`font-semibold mx-0.5 text-foreground ${digitClass}`}
+      style= {{
+        fontFamily: "'JetBrains Mono', monospace"
+      }}
     >
       {currentDigit}
     </span>
@@ -59,11 +62,14 @@ function ScramblingDigit(props: ScramblingDigitProps) {
         rounded-md
         px-1 py-1
         mx-0.5
-        font-mono text-xl md:text-2xl
+        text-xl md:text-2xl
         min-w-[28px]
         text-center
         ${digitClass}
       `}
+      style= {{
+        fontFamily: "'JetBrains Mono', monospace"
+      }}
     >
       {currentDigit}
     </span>
