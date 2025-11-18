@@ -82,7 +82,7 @@ export const CoreTeam: Person[] = [
 
   {
     name: "Midhunan V Prabhaharan",
-    title: "Event Management Head",
+    title: "Event & Management Head",
     photo: "/team/midhunan-v-prabhaharan.jpg",
     social: "https://github.com/midhunann",
     date: "2025 - Present",
@@ -93,6 +93,22 @@ export const CoreTeam: Person[] = [
     title: "Media Head",
     photo: "/team/vasudev-kishore.jpg",
     social: "https://in.linkedin.com/in/vasudevkishor",
+    date: "2025 - Present",
+  },
+
+  {
+    name: "Jayadev D",
+    title: "Webmaster Co-Head",
+    photo: "/team/jayadev-d.jpg",
+    social: "https://www.linkedin.com/in/jayadev-d",
+    date: "2025 - Present",
+  },
+
+  {
+    name: "Dharshni P",
+    title: "Design and PR Co-Head",
+    photo: "/team/dharshni-p.jpg",
+    social: "https://linkedin.com/in/p-dharshni",
     date: "2025 - Present",
   },
 ];

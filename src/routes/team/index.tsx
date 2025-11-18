@@ -18,14 +18,31 @@ function RouteComponent() {
             Our Guides & Mentors
           </p>
 
-          <div className="grid grid-cols-3 max-[942px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7">
+          <div
+            className="grid grid-cols-3 max-[942px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7 px-0 md:px-8 lg:px-16"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             {Faculty.map((faculty) => (
-              <TeamCard
-                key={faculty.name}
-                person={faculty}
-                type="large"
-                category="faculty"
-              />
+              <div
+                style={{
+                  flex: "1 0 28%",
+                  maxWidth: "300px",
+                  minWidth: "220px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <TeamCard
+                  key={faculty.name}
+                  person={faculty}
+                  type="large"
+                  category="faculty"
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -40,14 +57,31 @@ function RouteComponent() {
             Core Team
           </p>
 
-          <div className="grid grid-cols-4 max-[1246px]:grid-cols-3 max-[932px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7">
+          <div
+            className="px-10 grid grid-cols-4 max-[1246px]:grid-cols-3 max-[932px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             {CoreTeam.map((coreteam) => (
-              <TeamCard
-                key={coreteam.name}
-                person={coreteam}
-                type="large"
-                category="student"
-              />
+              <div
+                style={{
+                  flex: "1 0 21%",
+                  maxWidth: "300px",
+                  minWidth: "220px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <TeamCard
+                  key={coreteam.name}
+                  person={coreteam}
+                  type="large"
+                  category="student"
+                />
+              </div>
             ))}
           </div>
         </section>

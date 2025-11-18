@@ -78,7 +78,12 @@ interface AnimatedStatProps {
   tightSuffix?: boolean;
 }
 
-export function AnimatedStat({ stat, plainDigits = false, digitClass = "", tightSuffix = false }: AnimatedStatProps) {
+export function AnimatedStat({
+  stat,
+  plainDigits = false,
+  digitClass = "",
+  tightSuffix = false,
+}: AnimatedStatProps) {
   const digits = String(stat.value).split("");
   const baseDuration = 800;
   const stagger = 250;

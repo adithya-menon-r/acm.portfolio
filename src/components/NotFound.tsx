@@ -28,8 +28,10 @@ export function NotFound() {
           <div className="mt-4 text-xs text-zinc-500">
             <p>What failed: resource_locator.sys</p>
             <p>
-              Stop Code: {" "}
-              <span className="text-red-500 font-medium">HTTP_404_NOT_FOUND</span>
+              Stop Code:{" "}
+              <span className="text-red-500 font-medium">
+                HTTP_404_NOT_FOUND
+              </span>
             </p>
             <p>Kernel_Security_Check_Failure (0x000000D1)</p>
           </div>

@@ -1,4 +1,3 @@
-
 import { createFileRoute } from "@tanstack/react-router";
 import { EventCard } from "@/components/EventCard";
 import { eventDb } from "@/lib/event-data";
@@ -59,35 +58,45 @@ function App() {
             >
               Amrita ACM Student Chapter
             </motion.h1>
-            <motion.div className="max-w-xl text-base md:text-lg text-zinc-700 dark:text-zinc-200" {...fadeUp} transition={{...fadeUp.transition, delay: 0.15}}>
+            <motion.div
+              className="max-w-xl text-base md:text-lg text-zinc-700 dark:text-zinc-200"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.15 }}
+            >
               <p className="md:whitespace-nowrap">
-                <code className="bg-zinc-100 text-black px-2 py-0.5 md:py-1 rounded text-base border border-zinc-300" style={{fontFamily: "'JetBrains Mono', monospace"}}>
+                <code
+                  className="bg-zinc-100 text-black px-2 py-0.5 md:py-1 rounded text-base border border-zinc-300"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
                   sudo join
-                </code> the best dev crew on campus. Your <span className="font-bold">localhost</span> for everything.
+                </code>{" "}
+                the best dev crew on campus. Your{" "}
+                <span className="font-bold">localhost</span> for everything.
               </p>
             </motion.div>
-            <motion.div className="mt-2 flex flex-row gap-3 justify-center" {...fadeUp} transition={{...fadeUp.transition, delay: 0.3}}>
+            <motion.div
+              className="mt-2 flex flex-row gap-3 justify-center"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.3 }}
+            >
               <a href="#">
-                <button
-                  className="rounded-full bg-black text-white px-5 py-2 text-base md:px-8 md:py-2 md:text-lg font-semibold shadow-lg hover:bg-zinc-900 transition-colors cursor-pointer"
-                >
+                <button className="rounded-full bg-black text-white px-5 py-2 text-base md:px-8 md:py-2 md:text-lg font-semibold shadow-lg hover:bg-zinc-900 transition-colors cursor-pointer">
                   Join Us
                 </button>
               </a>
               <a
                 href="#about"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
-                  const el = document.getElementById('about');
+                  const el = document.getElementById("about");
                   if (el) {
-                    const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset
-                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    const y =
+                      el.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset
+                    window.scrollTo({ top: y, behavior: "smooth" });
                   }
                 }}
               >
-                <button
-                  className="rounded-full border border-black bg-transparent text-black px-5 py-2 text-base md:px-8 md:py-2 md:text-lg font-semibold transition-colors hover:bg-zinc-100 hover:border-zinc-800 hover:text-zinc-900 cursor-pointer"
-                >
+                <button className="rounded-full border border-black bg-transparent text-black px-5 py-2 text-base md:px-8 md:py-2 md:text-lg font-semibold transition-colors hover:bg-zinc-100 hover:border-zinc-800 hover:text-zinc-900 cursor-pointer">
                   More about us
                 </button>
               </a>
@@ -99,7 +108,8 @@ function App() {
       {/* Latest Events Section */}
       <section id="latest-events" className="w-full bg-white pt-2 pb-10">
         <div className="max-w-7xl mx-auto flex flex-col items-center md:items-start px-4 md:px-8">
-          {typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches ? (
+          {typeof window !== "undefined" &&
+          window.matchMedia("(max-width: 767px)").matches ? (
             <>
               <motion.h2
                 className="text-2xl md:text-3xl font-extrabold mb-6 md:mb-4 text-zinc-900 dark:text-white text-center md:text-left w-full"
@@ -120,7 +130,9 @@ function App() {
                   .sort(([, a], [, b]) => {
                     const eventA = a as { sortDate?: string };
                     const eventB = b as { sortDate?: string };
-                    return (eventB.sortDate || "").localeCompare(eventA.sortDate || "");
+                    return (eventB.sortDate || "").localeCompare(
+                      eventA.sortDate || "",
+                    );
                   })
                   .slice(0, 3)
                   .map(([slug, event]: any) => (
@@ -159,7 +171,9 @@ function App() {
                   .sort(([, a], [, b]) => {
                     const eventA = a as { sortDate?: string };
                     const eventB = b as { sortDate?: string };
-                    return (eventB.sortDate || "").localeCompare(eventA.sortDate || "");
+                    return (eventB.sortDate || "").localeCompare(
+                      eventA.sortDate || "",
+                    );
                   })
                   .slice(0, 3)
                   .map(([slug, event]: any) => (
@@ -195,23 +209,32 @@ function App() {
           </h2>
           <div className="flex flex-col md:flex-row gap-8 w-full items-center md:items-stretch">
             <div className="flex-1 flex flex-col justify-center text-zinc-700 text-base md:text-lg max-w-2xl">
-              <p> 
-                We're the Amrita ACM Chapter at <span className="font-bold">Amrita Vishwa Vidyapeetham, Coimbatore </span>- a community built by students who simply love to build things. 
-                We are huge believers in the open source spirit, where knowledge is shared freely and learning tech shouldn't be a barrier for anyone. 
-                We're all about making hard concepts easy and believe the best way to learn is by doing it together.
+              <p>
+                We're the Amrita ACM Chapter at{" "}
+                <span className="font-bold">
+                  Amrita Vishwa Vidyapeetham, Coimbatore{" "}
+                </span>
+                - a community built by students who simply love to build things.
+                We are huge believers in the open source spirit, where knowledge
+                is shared freely and learning tech shouldn't be a barrier for
+                anyone. We're all about making hard concepts easy and believe
+                the best way to learn is by doing it together.
               </p>
               <p className="mt-4">
-                This entire chapter runs on peer-to-peer support. 
-                This is that one place on campus where you can always go when you're stuck, whether it's a bug you've stared at for hours or a new concept that just isn't clicking. 
-                From "Hello World" to complex new frameworks, we're all just here to help each other learn and grow.
+                This entire chapter runs on peer-to-peer support. This is that
+                one place on campus where you can always go when you're stuck,
+                whether it's a bug you've stared at for hours or a new concept
+                that just isn't clicking. From "Hello World" to complex new
+                frameworks, we're all just here to help each other learn and
+                grow.
               </p>
             </div>
             <div className="flex-1 flex justify-center items-center">
               <img
                 src="/events/bootstrap-2025/bootstrap-2025-5.jpg"
                 alt="Bootstrap 5 Workshop"
-                  className="rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-lg w-full object-cover"
-                style={{ maxHeight: '300px' }}
+                className="rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-lg w-full object-cover"
+                style={{ maxHeight: "300px" }}
               />
             </div>
           </div>
@@ -221,16 +244,19 @@ function App() {
       {/* Stats Section */}
       <section id="stats" className="w-full bg-white pt-2 pb-3 md:py-6">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 text-center"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 text-center">
             {/* Years Active */}
             <div className="flex flex-col items-center justify-center">
               <span
                 className="text-3xl md:text-4xl font-bold mb-1"
                 style={{ fontFamily: "'Geist Sans', sans-serif" }}
               >
-                  <AnimatedStat stat={{ value: 1 }} plainDigits digitClass="text-3xl md:text-4xl" tightSuffix />
+                <AnimatedStat
+                  stat={{ value: 1 }}
+                  plainDigits
+                  digitClass="text-3xl md:text-4xl"
+                  tightSuffix
+                />
               </span>
               <span className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 font-medium">
                 Year Active
@@ -242,7 +268,12 @@ function App() {
                 className="text-3xl md:text-4xl font-bold mb-1"
                 style={{ fontFamily: "'Geist Sans', sans-serif" }}
               >
-                  <AnimatedStat stat={{ value: 45, prefix: '', suffix: '+' }} plainDigits digitClass="text-3xl md:text-4xl" tightSuffix />
+                <AnimatedStat
+                  stat={{ value: 45, prefix: "", suffix: "+" }}
+                  plainDigits
+                  digitClass="text-3xl md:text-4xl"
+                  tightSuffix
+                />
               </span>
               <span className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 font-medium">
                 Members
@@ -254,7 +285,12 @@ function App() {
                 className="text-3xl md:text-4xl font-bold mb-1"
                 style={{ fontFamily: "'Geist Sans', sans-serif" }}
               >
-                  <AnimatedStat stat={{ value: 1000, prefix: '', suffix: '+' }} plainDigits digitClass="text-3xl md:text-4xl" tightSuffix />
+                <AnimatedStat
+                  stat={{ value: 1000, prefix: "", suffix: "+" }}
+                  plainDigits
+                  digitClass="text-3xl md:text-4xl"
+                  tightSuffix
+                />
               </span>
               <span className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 font-medium">
                 Participants
@@ -266,7 +302,12 @@ function App() {
                 className="text-3xl md:text-4xl font-bold mb-1"
                 style={{ fontFamily: "'Geist Sans', sans-serif" }}
               >
-                  <AnimatedStat stat={{ value: 10, prefix: '', suffix: '+' }} plainDigits digitClass="text-3xl md:text-4xl" tightSuffix />
+                <AnimatedStat
+                  stat={{ value: 10, prefix: "", suffix: "+" }}
+                  plainDigits
+                  digitClass="text-3xl md:text-4xl"
+                  tightSuffix
+                />
               </span>
               <span className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 font-medium">
                 Events
@@ -288,13 +329,25 @@ function App() {
             {/* Desktop overlay with black fade */}
             <div className="hidden md:block">
               {/* Black fade overlay */}
-              <div className="pointer-events-none absolute bottom-0 left-0 w-full h-1/4 z-10" style={{background: 'linear-gradient(to top, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.0) 100%)'}} />
+              <div
+                className="pointer-events-none absolute bottom-0 left-0 w-full h-1/4 z-10"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.0) 100%)",
+                }}
+              />
               <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-4 md:p-6 z-20">
-                <div className="text-white text-lg font-semibold drop-shadow-lg" style={{fontFamily: "'Geist Sans', sans-serif"}}>
+                <div
+                  className="text-white text-lg font-semibold drop-shadow-lg"
+                  style={{ fontFamily: "'Geist Sans', sans-serif" }}
+                >
                   Come for the code, stay for the community.
                 </div>
                 <a href="#join" className="ml-2">
-                  <button className="rounded-full bg-white text-black px-4 py-2 text-sm font-semibold shadow-md transition-colors hover:bg-zinc-200 hover:text-black cursor-pointer" style={{fontFamily: "'Geist Sans', sans-serif"}}>
+                  <button
+                    className="rounded-full bg-white text-black px-4 py-2 text-sm font-semibold shadow-md transition-colors hover:bg-zinc-200 hover:text-black cursor-pointer"
+                    style={{ fontFamily: "'Geist Sans', sans-serif" }}
+                  >
                     Join the Community
                   </button>
                 </a>
@@ -305,7 +358,10 @@ function App() {
           <div className="block md:hidden mt-4 px-2">
             <div className="flex justify-center">
               <a href="#join">
-                <button className="rounded-full bg-black text-white px-5 py-2 text-sm font-semibold shadow-md transition-colors hover:bg-zinc-900" style={{fontFamily: "'Geist Sans', sans-serif"}}>
+                <button
+                  className="rounded-full bg-black text-white px-5 py-2 text-sm font-semibold shadow-md transition-colors hover:bg-zinc-900"
+                  style={{ fontFamily: "'Geist Sans', sans-serif" }}
+                >
                   Join the Community
                 </button>
               </a>
