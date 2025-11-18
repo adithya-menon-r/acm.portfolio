@@ -119,7 +119,7 @@ export function AnimatedStat({
 
   return (
     <div
-      className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 p-2"
+      className="flex flex-row flex-wrap items-center justify-center gap-x-1 gap-y-2 p-2"
       ref={statRef}
     >
       {/* Prefix*/}

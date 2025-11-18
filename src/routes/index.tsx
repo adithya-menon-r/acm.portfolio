@@ -269,7 +269,7 @@ function App() {
                 style={{ fontFamily: "'Geist Sans', sans-serif" }}
               >
                 <AnimatedStat
-                  stat={{ value: 45, prefix: "", suffix: "+" }}
+                  stat={{ value: 35, prefix: "", suffix: "+" }}
                   plainDigits
                   digitClass="text-3xl md:text-4xl"
                   tightSuffix

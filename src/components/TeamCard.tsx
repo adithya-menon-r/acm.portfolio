@@ -39,7 +39,7 @@ export default function TeamCard(props: {
 
       {date && (
         <div
-          className={`flex gap-2 items-center absolute top-2 left-2 z-10 ${category === "faculty" ? "bg-pink-800" : "bg-blue-800"} rounded-4xl text-white px-2 py-1`}
+          className={`flex gap-2 items-center absolute top-2 left-2 z-10 ${category === "faculty" ? "bg-[#b50246]" : "bg-[#212529]"} rounded-4xl text-white px-2 py-1`}
         >
           <Calendar size={15} color="#ffffff" />
           <p className="text-[0.7rem] font-bold font-sans">{date}</p>
