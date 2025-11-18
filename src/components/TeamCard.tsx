@@ -17,45 +17,45 @@ export default function TeamCard(props: {
     <a
       href={social}
       target="_blank"
-      className={`${type === "large" ? "w-70 h-80 flex-col hover:shadow-md" : "w-65 h-20 justify-center items-center border-black gap-3 hover:shadow-sm"} border flex select-none items-center rounded-2xl overflow-hidden relative transition-all ease-in-out duration-500 group`}
+      className={`${type === "large" ? "h-80 w-70 flex-col hover:shadow-md" : "h-20 w-65 items-center justify-center gap-3 border-black hover:shadow-sm"} group relative flex items-center overflow-hidden rounded-2xl border transition-all duration-500 ease-in-out select-none`}
     >
       <div
-        className={`${type === "large" ? "w-full h-full" : "w-15 h-15 border rounded-full border-blue-500"} overflow-hidden pointer-events-none`}
+        className={`${type === "large" ? "h-full w-full" : "h-15 w-15 rounded-full border border-blue-500"} pointer-events-none overflow-hidden`}
       >
         <img
-          className="w-full h-full object-cover group-hover:scale-102 transition-all ease-in-out duration-500"
+          className="h-full w-full object-cover transition-all duration-500 ease-in-out group-hover:scale-102"
           src={photo ?? placeholder}
           alt={name}
         />
       </div>
 
-      <div className="w-10 h-10 flex justify-center items-center absolute opacity-0 right-2 top-2 group-hover:opacity-100 group-hover:right-3 group-hover:top-3 bg-white shadow-md rounded-full transition-all ease-in-out duration-500 pointer-events-none">
+      <div className="pointer-events-none absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-white opacity-0 shadow-md transition-all duration-500 ease-in-out group-hover:top-3 group-hover:right-3 group-hover:opacity-100">
         <ExternalLink size={18} color="#000000" />
       </div>
 
       {type === "small" && (
-        <p className="font-sans text-black font-normal">{name}</p>
+        <p className="font-sans font-normal text-black">{name}</p>
       )}
 
       {date && (
         <div
-          className={`flex gap-2 items-center absolute top-2 left-2 z-10 ${category === "faculty" ? "bg-[#b50246]" : "bg-[#212529]"} rounded-4xl text-white px-2 py-1`}
+          className={`absolute top-2 left-2 z-10 flex items-center gap-2 ${category === "faculty" ? "bg-[#b50246]" : "bg-[#212529]"} rounded-4xl px-2 py-1 text-white`}
         >
           <Calendar size={15} color="#ffffff" />
-          <p className="text-[0.7rem] font-bold font-sans">{date}</p>
+          <p className="font-sans text-[0.7rem] font-bold">{date}</p>
         </div>
       )}
 
       {type === "large" && (
         <div
-          className={`flex justify-center px-5 items-center w-[92%] h-15 bg-white shadow-md absolute bottom-3 rounded-xl`}
+          className={`absolute bottom-3 flex h-15 w-[92%] items-center justify-center rounded-xl bg-white px-5 shadow-md`}
         >
           <span className="text-center">
-            <p className="text-[0.95rem] leading-tight font-sans font-bold text-black">
+            <p className="font-sans text-[0.95rem] leading-tight font-bold text-black">
               {name}
             </p>
             {title && (
-              <p className="text-[0.8rem] font-sans text-black/50 font-bold">
+              <p className="font-sans text-[0.8rem] font-bold text-black/50">
                 {title}
               </p>
             )}

@@ -12,18 +12,15 @@ function RouteComponent() {
   );
   return (
     <div className="text-zinc-900">
-      <div className="container p-4 mx-auto md:p-8">
+      <div className="container mx-auto p-4 md:p-8">
         <section className="pb-8 text-center md:pb-10">
-          <h1
-            className="text-3xl md:text-2xl font-bold md:text-5xl"
-            style={{ fontFamily: "'Geist Sans', sans-serif" }}
-          >
+          <h1 className="font-geist text-3xl font-bold md:text-2xl md:text-5xl">
             Our Past Events
           </h1>
         </section>
 
         <section className="mb-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
             {events.map(([slug, event]) => (
               <EventCard key={slug} slug={slug} event={event} />
             ))}

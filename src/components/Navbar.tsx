@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
-import { Home, Menu, X, Users, Calendar } from "lucide-react";
+import { Calendar, Home, Menu, Users, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,29 +55,27 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 p-3 md:py-2 md:px-6 flex items-center justify-between text-black w-full transition-all duration-300
-        ${
+        className={`fixed top-0 right-0 left-0 z-50 flex w-full items-center justify-between p-3 text-black transition-all duration-300 md:px-6 md:py-2 ${
           isScrolled || isOpen
-            ? "bg-white border-b border-zinc-200"
-            : "bg-transparent border-b border-transparent"
-        }
-        `}
+            ? "border-b border-zinc-200 bg-white"
+            : "border-b border-transparent bg-transparent"
+        } `}
       >
-        <div className="flex items-center gap-4 h-12 md:h-14">
-          <Link to="/" className="flex items-center gap-3 h-full">
+        <div className="flex h-12 items-center gap-4 md:h-14">
+          <Link to="/" className="flex h-full items-center gap-3">
             <img
               src="/acm_logo.png"
               alt="ACM Logo"
-              className="h-10 md:h-12 my-auto"
+              className="my-auto h-10 md:h-12"
             />
             <img
               src="/amrita_logo.svg"
               alt="Amrita Logo"
-              className="h-8 md:h-10 my-auto"
+              className="my-auto h-8 md:h-10"
             />
           </Link>
         </div>
-        <nav className="hidden md:flex items-center gap-5 text-lg font-medium text-black">
+        <nav className="hidden items-center gap-5 text-lg font-medium text-black md:flex">
           <Link
             to="/"
             activeProps={activeLinkProps}
@@ -102,8 +100,9 @@ export default function Navbar() {
         </nav>
 
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 hover:bg-gray-100 rounded-lg transition-colors md:hidden text-black"
+          className="rounded-lg p-2 text-black transition-colors hover:bg-gray-100 md:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -111,7 +110,7 @@ export default function Navbar() {
       </header>
 
       <div
-        className={`md:hidden fixed top-[71px] left-0 w-full bg-white text-black transition-all duration-300 ease-in-out z-50 rounded-b-2xl shadow-[0_8px_16px_-4px_rgba(0,0,0,0.18)] ${
+        className={`fixed top-[71px] left-0 z-50 w-full rounded-b-2xl bg-white text-black shadow-[0_8px_16px_-4px_rgba(0,0,0,0.18)] transition-all duration-300 ease-in-out md:hidden ${
           isOpen ? "max-h-96" : "max-h-0"
         } overflow-hidden`}
       >
@@ -119,7 +118,7 @@ export default function Navbar() {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
+            className="flex items-center gap-3 rounded-lg py-3 text-black transition-colors hover:bg-gray-100"
             activeProps={{
               className:
                 "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
@@ -131,7 +130,7 @@ export default function Navbar() {
           <Link
             to="/events"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
+            className="flex items-center gap-3 rounded-lg py-3 text-black transition-colors hover:bg-gray-100"
             activeProps={{
               className:
                 "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
@@ -143,7 +142,7 @@ export default function Navbar() {
           <Link
             to="/team"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
+            className="flex items-center gap-3 rounded-lg py-3 text-black transition-colors hover:bg-gray-100"
             activeProps={{
               className:
                 "flex items-center gap-3 py-3 rounded-lg text-black font-bold",

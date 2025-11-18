@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { StatItem } from "@/lib/event-data";
 
 // ScramblingDigit Component
@@ -44,32 +44,13 @@ function ScramblingDigit(props: ScramblingDigitProps) {
 
   return plain ? (
     <span
-      className={`font-semibold mx-0.5 text-foreground ${digitClass}`}
-      style= {{
-        fontFamily: "'JetBrains Mono', monospace"
-      }}
+      className={`text-foreground font-jetbrains-mono mx-0.5 font-semibold ${digitClass}`}
     >
       {currentDigit}
     </span>
   ) : (
     <span
-      className={`
-        inline-block
-        bg-muted/70 
-        border
-        text-foreground 
-        font-semibold 
-        rounded-md
-        px-1 py-1
-        mx-0.5
-        text-xl md:text-2xl
-        min-w-[28px]
-        text-center
-        ${digitClass}
-      `}
-      style= {{
-        fontFamily: "'JetBrains Mono', monospace"
-      }}
+      className={`bg-muted/70 text-foreground font-jetbrains-mono mx-0.5 inline-block min-w-[28px] rounded-md border px-1 py-1 text-center text-xl font-semibold md:text-2xl ${digitClass} `}
     >
       {currentDigit}
     </span>
@@ -124,7 +105,7 @@ export function AnimatedStat({
     >
       {/* Prefix*/}
       {stat.prefix && (
-        <span className="text-xl md:text-2xl  font-semibold text-foreground">
+        <span className="text-foreground text-xl font-semibold md:text-2xl">
           {stat.prefix}
         </span>
       )}
@@ -146,7 +127,7 @@ export function AnimatedStat({
       {/* Suffix*/}
       {stat.suffix && (
         <span
-          className={`text-xl md:text-2xl font-semibold text-foreground${tightSuffix ? " ml-0" : " ml-1"}`}
+          className={`text-xl font-semibold md:text-2xl text-foreground${tightSuffix ? "ml-0" : "ml-1"}`}
         >
           {stat.suffix}
         </span>

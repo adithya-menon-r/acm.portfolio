@@ -8,33 +8,18 @@ export const Route = createFileRoute("/team/")({
 
 function RouteComponent() {
   return (
-    <section className="flex flex-col justify-center items-center gap-5 pt-8 py-15 min-h-full">
-      <section className="w-full h-fit flex flex-col items-center justify-center">
-        <section className="flex flex-col justify-center items-center gap-7">
-          <p
-            className="text-3xl md:text-4xl font-sans font-bold mb-4"
-            style={{ fontFamily: "'Geist Sans', sans-serif" }}
-          >
+    <section className="flex min-h-full flex-col items-center justify-center gap-5 py-15 pt-8">
+      <section className="flex h-fit w-full flex-col items-center justify-center">
+        <section className="flex flex-col items-center justify-center gap-7">
+          <p className="font-geist mb-4 font-sans text-3xl font-bold md:text-4xl">
             Our Guides & Mentors
           </p>
 
-          <div
-            className="grid grid-cols-3 max-[942px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7 px-0 md:px-8 lg:px-16"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
+          <div className="flex flex-wrap justify-center gap-7 px-0 md:px-8 lg:px-16">
             {Faculty.map((faculty) => (
               <div
-                style={{
-                  flex: "1 0 28%",
-                  maxWidth: "300px",
-                  minWidth: "220px",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
+                key={faculty.name}
+                className="flex max-w-[300px] min-w-[220px] flex-[1_0_28%] justify-center"
               >
                 <TeamCard
                   key={faculty.name}
@@ -48,32 +33,17 @@ function RouteComponent() {
         </section>
       </section>
 
-      <section className="w-full h-fit pt-16 flex flex-col items-center justify-center">
-        <section className="flex flex-col justify-center items-center gap-7">
-          <p
-            className="text-3xl md:text-4xl font-sans font-bold mb-4"
-            style={{ fontFamily: "'Geist Sans', sans-serif" }}
-          >
+      <section className="flex h-fit w-full flex-col items-center justify-center pt-16">
+        <section className="flex flex-col items-center justify-center gap-7">
+          <p className="font-geist mb-4 font-sans text-3xl font-bold md:text-4xl">
             Core Team
           </p>
 
-          <div
-            className="px-10 grid grid-cols-4 max-[1246px]:grid-cols-3 max-[932px]:grid-cols-2 max-[620px]:grid-cols-1 justify-center items-center gap-7"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
+          <div className="flex flex-wrap justify-center gap-7 px-10">
             {CoreTeam.map((coreteam) => (
               <div
-                style={{
-                  flex: "1 0 21%",
-                  maxWidth: "300px",
-                  minWidth: "220px",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
+                key={coreteam.name}
+                className="flex max-w-[300px] min-w-[220px] flex-[1_0_21%] justify-center"
               >
                 <TeamCard
                   key={coreteam.name}

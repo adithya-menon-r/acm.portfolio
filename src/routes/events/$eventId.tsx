@@ -1,8 +1,8 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { type MotionProps, motion } from "framer-motion";
+import { AnimatedStat } from "@/components/AnimatedStat";
 import { NotFound } from "@/components/NotFound";
 import { eventDb } from "@/lib/event-data";
-import { AnimatedStat } from "@/components/AnimatedStat";
-import { motion, type MotionProps } from "framer-motion";
 
 // Slide-up fade-in animation
 const fadeUp: MotionProps = {
@@ -30,7 +30,7 @@ function EventDetailComponent() {
 
   return (
     <div className="text-foreground py-6">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Main Event Image */}
         <motion.div {...fadeUp} className="mb-8">
           <motion.img
@@ -38,22 +38,22 @@ function EventDetailComponent() {
             alt={event.name}
             loading="eager"
             decoding="async"
-            className="w-full h-[300px] md:h-[550px] object-cover rounded-xl shadow-lg"
+            className="h-[300px] w-full rounded-xl object-cover shadow-lg md:h-[550px]"
             {...fadeUp}
           />
         </motion.div>
 
         {/* Event Info */}
-        <motion.div {...fadeUp} className="text-center mb-5">
+        <motion.div {...fadeUp} className="mb-5 text-center">
           <motion.h1
-            className="text-3xl md:text-5xl font-extrabold mb-3 tracking-tight"
+            className="mb-3 text-3xl font-extrabold tracking-tight md:text-5xl"
             {...fadeUp}
           >
             {event.name}
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground"
+            className="text-muted-foreground text-lg md:text-xl"
             {...fadeUp}
           >
             {event.details}
@@ -61,9 +61,9 @@ function EventDetailComponent() {
         </motion.div>
 
         {/* Event Report */}
-        <motion.div {...fadeUp} className="max-w-4xl mx-auto mb-10">
+        <motion.div {...fadeUp} className="mx-auto mb-10 max-w-4xl">
           <motion.p
-            className="text-base md:text-lg leading-relaxed whitespace-pre-line"
+            className="text-base leading-relaxed whitespace-pre-line md:text-lg"
             {...fadeUp}
           >
             {event.report}
@@ -75,7 +75,7 @@ function EventDetailComponent() {
               {event.tags.map((tag: string) => (
                 <motion.span
                   key={tag}
-                  className="bg-muted text-muted-foreground text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  className="bg-muted text-muted-foreground rounded-full px-2.5 py-0.5 text-xs font-semibold"
                   {...fadeUp}
                 >
                   {tag}
@@ -85,14 +85,14 @@ function EventDetailComponent() {
           )}
         </motion.div>
 
-        <hr className="w-full border-t border-border my-8" />
+        <hr className="border-border my-8 w-full border-t" />
 
         {/* Stats */}
         {event.stats && event.stats.length > 0 && (
-          <motion.div {...fadeUp} className="w-full mb-4">
+          <motion.div {...fadeUp} className="mb-4 w-full">
             <motion.div
               {...fadeUp}
-              className="flex flex-row flex-wrap gap-x-8 gap-y-4 justify-center"
+              className="flex flex-row flex-wrap justify-center gap-x-8 gap-y-4"
             >
               {event.stats.map(
                 (
@@ -110,13 +110,13 @@ function EventDetailComponent() {
 
         {/* Sponsors */}
         {event.sponsors && event.sponsors.length > 0 && (
-          <hr className="w-full border-t border-border my-8" />
+          <hr className="border-border my-8 w-full border-t" />
         )}
 
         {event.sponsors && event.sponsors.length > 0 && (
           <motion.div {...fadeUp} className="mb-6">
             <motion.h2
-              className="text-foreground text-2xl md:text-3xl font-bold text-center mb-6"
+              className="text-foreground mb-6 text-center text-2xl font-bold md:text-3xl"
               {...fadeUp}
             >
               {event.sponsors.length > 1 ? "Event Sponsors" : "Event Sponsor"}
@@ -124,7 +124,7 @@ function EventDetailComponent() {
 
             <motion.div
               {...fadeUp}
-              className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-6xl mx-auto"
+              className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-6 md:gap-8"
             >
               {event.sponsors.map((sponsor: string, index: number) => (
                 <motion.div
@@ -136,7 +136,7 @@ function EventDetailComponent() {
                     src={sponsor}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-auto object-contain rounded-lg transition-transform duration-300 hover:scale-105 p-4"
+                    className="h-auto w-full rounded-lg object-contain p-4 transition-transform duration-300 hover:scale-105"
                     alt={`Sponsor ${index + 1}`}
                     {...fadeUp}
                   />
@@ -146,13 +146,13 @@ function EventDetailComponent() {
           </motion.div>
         )}
 
-        <hr className="w-full border-t border-border my-8" />
+        <hr className="border-border my-8 w-full border-t" />
 
         {/* Event Gallery Grid */}
         {event.gallery && event.gallery.length > 0 && (
           <motion.div {...fadeUp}>
             <motion.h3
-              className="text-2xl md:text-3xl font-bold text-center mb-6"
+              className="mb-6 text-center text-2xl font-bold md:text-3xl"
               {...fadeUp}
             >
               Event Gallery
@@ -171,7 +171,7 @@ function EventDetailComponent() {
                       src={photos[0]}
                       loading="lazy"
                       decoding="async"
-                      className="w-full md:w-1/2 object-contain rounded-lg"
+                      className="w-full rounded-lg object-contain md:w-1/2"
                       {...fadeUp}
                     />
                   </motion.div>
@@ -181,7 +181,7 @@ function EventDetailComponent() {
                 return (
                   <motion.div
                     {...fadeUp}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-6xl mx-auto"
+                    className="mx-auto grid max-w-6xl grid-cols-1 gap-2 md:grid-cols-2"
                   >
                     {photos.map((p: string, i: number) => (
                       <motion.img
@@ -201,14 +201,14 @@ function EventDetailComponent() {
                 return (
                   <motion.div
                     {...fadeUp}
-                    className="grid gap-2 max-w-6xl mx-auto"
+                    className="mx-auto grid max-w-6xl gap-2"
                   >
                     {photos.slice(0, -1).map(
                       (_p: string, i: number) =>
                         i % 2 === 0 && (
                           <div
                             key={`row-${i}`}
-                            className="grid grid-cols-1 md:grid-cols-2 gap-2"
+                            className="grid grid-cols-1 gap-2 md:grid-cols-2"
                           >
                             <motion.img
                               src={photos[i]}
@@ -232,7 +232,7 @@ function EventDetailComponent() {
                         src={photos[numPhotos - 1]}
                         loading="lazy"
                         decoding="async"
-                        className="w-full md:w-1/2 h-60 md:h-80 object-cover object-center rounded-lg"
+                        className="h-60 w-full rounded-lg object-cover object-center md:h-80 md:w-1/2"
                         {...fadeUp}
                       />
                     </div>
@@ -243,7 +243,7 @@ function EventDetailComponent() {
               return (
                 <motion.div
                   {...fadeUp}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-6xl mx-auto"
+                  className="mx-auto grid max-w-6xl grid-cols-1 gap-2 md:grid-cols-2"
                 >
                   {photos.map((p: string, i: number) => (
                     <motion.img

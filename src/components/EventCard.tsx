@@ -1,38 +1,38 @@
-import { Card } from "@/components/ui/card";
-import { CalendarDays, Tag, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { ArrowUpRight, CalendarDays, Tag } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
-import { type Event } from "@/lib/event-data";
+import type { Event } from "@/lib/event-data";
 
 export function EventCard({ slug, event }: { slug: string; event: Event }) {
   return (
     <Link to="/events/$eventId" params={{ eventId: slug }} className="group">
-      <Card className="overflow-hidden transition-all duration-300 ease-out cursor-pointer hover:scale-[1.01] hover:shadow-lg border border-zinc-200 dark:border-zinc-800 rounded-lg md:rounded-xl bg-white dark:bg-zinc-800 p-0">
-        <div className="absolute top-4 right-4 z-20 flex items-center justify-center w-10 h-10 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-full opacity-0 translate-x-2 -translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 shadow-lg">
-          <ArrowUpRight className="w-5 h-5 text-zinc-900 dark:text-white" />
+      <Card className="cursor-pointer overflow-hidden rounded-lg border border-zinc-200 bg-white p-0 transition-all duration-300 ease-out hover:scale-[1.01] hover:shadow-lg md:rounded-xl dark:border-zinc-800 dark:bg-zinc-800">
+        <div className="absolute top-4 right-4 z-20 flex h-10 w-10 translate-x-2 -translate-y-2 items-center justify-center rounded-full bg-white/90 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:bg-zinc-800/90">
+          <ArrowUpRight className="h-5 w-5 text-zinc-900 dark:text-white" />
         </div>
 
-        <div className="relative overflow-hidden aspect-[16/9] leading-[0]">
+        <div className="relative aspect-[16/9] overflow-hidden leading-[0]">
           <img
             src={event.mainImage}
             alt={event.name}
-            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-105 block"
+            className="block h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />
         </div>
 
-        <div className="px-3 pb-3 pt-0 -mt-2.5 bg-white dark:bg-zinc-800">
-          <div className="flex items-center gap-2 text-xs mb-2">
-            <span className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-700 px-2 py-0.5 rounded-full text-zinc-700 dark:text-zinc-300">
-              <Tag className="w-3 h-3" />
+        <div className="-mt-2.5 bg-white px-3 pt-0 pb-3 dark:bg-zinc-800">
+          <div className="mb-2 flex items-center gap-2 text-xs">
+            <span className="flex items-center gap-1 rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300">
+              <Tag className="h-3 w-3" />
               <span className="font-medium">{event.category}</span>
             </span>
-            <span className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-700 px-2 py-0.5 rounded-full text-zinc-700 dark:text-zinc-300">
-              <CalendarDays className="w-3 h-3" />
+            <span className="flex items-center gap-1 rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300">
+              <CalendarDays className="h-3 w-3" />
               <span className="font-medium">{event.displayDate}</span>
             </span>
           </div>
 
-          <h3 className="text:lg md:text-xl font-bold leading-tight text-zinc-900 dark:text-white md:line-clamp-1">
+          <h3 className="text:lg leading-tight font-bold text-zinc-900 md:line-clamp-1 md:text-xl dark:text-white">
             {event.name}
           </h3>
         </div>
