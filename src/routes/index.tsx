@@ -53,11 +53,13 @@ function App() {
               transition={{ ...fadeUp.transition, delay: 0.15 }}
             >
               <p className="md:whitespace-nowrap">
-                <code className="font-jetBrains-mono rounded border border-zinc-300 bg-zinc-100 px-2 py-0.5 text-base text-black md:py-1">
+                <code className="font-jetBrains-mono rounded border border-zinc-300 bg-zinc-100 px-2 py-0.25 text-base text-black md:py-1">
                   sudo join
                 </code>{" "}
                 the best dev crew on campus. Your{" "}
-                <span className="font-bold">localhost</span> for everything.
+                <code className="font-jetBrains-mono rounded border border-zinc-300 bg-zinc-100 px-2 py-0.25 text-base text-black md:py-1">
+                  127.0.0.1
+                </code>{" "} for all things tech.
               </p>
             </motion.div>
             <motion.div
