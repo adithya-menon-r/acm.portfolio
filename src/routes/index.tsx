@@ -59,7 +59,8 @@ function App() {
                 the best dev crew on campus. Your{" "}
                 <code className="font-jetBrains-mono rounded border border-zinc-300 bg-zinc-100 px-2 py-0.25 text-base text-black md:py-1">
                   127.0.0.1
-                </code>{" "} for all things tech.
+                </code>{" "}
+                for all things tech.
               </p>
             </motion.div>
             <motion.div

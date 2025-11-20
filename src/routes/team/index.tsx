@@ -69,7 +69,7 @@ function RouteComponent() {
           ACM Members
         </p>
 
-        <div className="w-[90%] gap-4 flex flex-wrap justify-center">
+        <div className="flex w-[90%] flex-wrap justify-center gap-4">
           {ACMMembers.map((members) => (
             <div key={members.name} className="flex flex-wrap justify-center">
               <TeamCard
@@ -91,7 +91,7 @@ function RouteComponent() {
           Volunteers
         </p>
 
-        <div className="w-[90%] gap-4 flex flex-wrap justify-center">
+        <div className="flex w-[90%] flex-wrap justify-center gap-4">
           {ACM_Volunteers.map((volunteers) => (
             <div
               key={volunteers.name}
