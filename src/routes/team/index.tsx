@@ -88,7 +88,7 @@ function RouteComponent() {
 
       <section className="flex flex-col items-center justify-center gap-7">
         <p className="font-geist mb-4 text-3xl font-bold md:text-4xl">
-          ACM Volunteers
+          Volunteers
         </p>
 
         <div className="w-[90%] gap-4 flex flex-wrap justify-center">
