@@ -48,11 +48,11 @@ function App() {
               Amrita ACM Student Chapter
             </motion.h1>
             <motion.div
-              className="max-w-xl text-base text-zinc-700 md:text-lg dark:text-zinc-200"
+              className="max-w-xl md:max-w-2xl text-base text-zinc-700 md:text-lg dark:text-zinc-200"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.15 }}
             >
-              <p className="md:whitespace-nowrap">
+              <p>
                 <code className="font-jetBrains-mono rounded border border-zinc-300 bg-zinc-100 px-2 py-0.25 text-base text-black md:py-1">
                   sudo join
                 </code>{" "}
