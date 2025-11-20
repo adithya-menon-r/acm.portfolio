@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import TeamCard from "@/components/TeamCard";
-import { CoreTeam, Faculty } from "@/lib/team-details";
+import {
+  ACM_Volunteers,
+  ACMMembers,
+  CoreTeam,
+  Faculty,
+} from "@/lib/team-details";
 
 export const Route = createFileRoute("/team/")({
   component: RouteComponent,
@@ -9,52 +14,98 @@ export const Route = createFileRoute("/team/")({
 function RouteComponent() {
   return (
     <section className="flex min-h-full flex-col items-center justify-center gap-5 py-15 pt-8">
-      <section className="flex h-fit w-full flex-col items-center justify-center">
-        <section className="flex flex-col items-center justify-center gap-7">
-          <p className="font-geist mb-4 font-sans text-3xl font-bold md:text-4xl">
-            Our Guides & Mentors
-          </p>
+      <section className="flex flex-col items-center justify-center gap-7">
+        <p className="font-geist mb-4 text-3xl font-bold md:text-4xl">
+          Our Guides & Mentors
+        </p>
 
-          <div className="flex flex-wrap justify-center gap-7 px-0 md:px-8 lg:px-16">
-            {Faculty.map((faculty) => (
-              <div
+        <div className="flex flex-wrap justify-center gap-7 px-0 md:px-8 lg:px-16">
+          {Faculty.map((faculty) => (
+            <div
+              key={faculty.name}
+              className="flex max-w-[300px] min-w-[220px] flex-[1_0_28%] justify-center"
+            >
+              <TeamCard
                 key={faculty.name}
-                className="flex max-w-[300px] min-w-[220px] flex-[1_0_28%] justify-center"
-              >
-                <TeamCard
-                  key={faculty.name}
-                  person={faculty}
-                  type="large"
-                  category="faculty"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+                person={faculty}
+                type="large"
+                category="faculty"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section className="flex h-fit w-full flex-col items-center justify-center pt-16">
-        <section className="flex flex-col items-center justify-center gap-7">
-          <p className="font-geist mb-4 font-sans text-3xl font-bold md:text-4xl">
-            Core Team
-          </p>
+      {/* For Spacing */}
+      <div className="h-5 w-full" />
 
-          <div className="flex flex-wrap justify-center gap-7 px-10">
-            {CoreTeam.map((coreteam) => (
-              <div
+      <section className="flex flex-col items-center justify-center gap-7">
+        <p className="font-geist mb-4 text-3xl font-bold md:text-4xl">
+          Core Team
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-7 px-10">
+          {CoreTeam.map((coreteam) => (
+            <div
+              key={coreteam.name}
+              className="flex max-w-[300px] min-w-[220px] flex-[1_0_21%] justify-center"
+            >
+              <TeamCard
                 key={coreteam.name}
-                className="flex max-w-[300px] min-w-[220px] flex-[1_0_21%] justify-center"
-              >
-                <TeamCard
-                  key={coreteam.name}
-                  person={coreteam}
-                  type="large"
-                  category="student"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+                person={coreteam}
+                type="large"
+                category="student"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* For Spacing */}
+      <div className="h-5 w-full" />
+
+      <section className="flex flex-col items-center justify-center gap-7">
+        <p className="font-geist mb-4 text-3xl font-bold md:text-4xl">
+          ACM Members
+        </p>
+
+        <div className="w-[90%] gap-4 flex flex-wrap justify-center">
+          {ACMMembers.map((members) => (
+            <div key={members.name} className="flex flex-wrap justify-center">
+              <TeamCard
+                key={members.name}
+                person={members}
+                type="small"
+                category="student"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* For Spacing */}
+      <div className="h-5 w-full" />
+
+      <section className="flex flex-col items-center justify-center gap-7">
+        <p className="font-geist mb-4 text-3xl font-bold md:text-4xl">
+          Volunteers
+        </p>
+
+        <div className="w-[90%] gap-4 flex flex-wrap justify-center">
+          {ACM_Volunteers.map((volunteers) => (
+            <div
+              key={volunteers.name}
+              className="flex flex-wrap justify-center"
+            >
+              <TeamCard
+                key={volunteers.name}
+                person={volunteers}
+                type="small"
+                category="student"
+              />
+            </div>
+          ))}
+        </div>
       </section>
     </section>
   );
