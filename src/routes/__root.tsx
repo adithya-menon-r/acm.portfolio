@@ -1,4 +1,5 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { NotFound } from "@/components/NotFound";
@@ -13,6 +14,7 @@ export const Route = createRootRoute({
         </div>
         <Footer />
       </div>
+      <Analytics />
     </div>
   ),
   notFoundComponent: () => <NotFound />,
