@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TeamIndexRouteImport } from './routes/team/index'
+import { Route as JoinUsIndexRouteImport } from './routes/join-us/index'
 import { Route as EventsIndexRouteImport } from './routes/events/index'
 import { Route as EventsEventIdRouteImport } from './routes/events/$eventId'
 
@@ -22,6 +23,11 @@ const IndexRoute = IndexRouteImport.update({
 const TeamIndexRoute = TeamIndexRouteImport.update({
   id: '/team/',
   path: '/team/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinUsIndexRoute = JoinUsIndexRouteImport.update({
+  id: '/join-us/',
+  path: '/join-us/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsIndexRoute = EventsIndexRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/events/$eventId': typeof EventsEventIdRoute
   '/events': typeof EventsIndexRoute
+  '/join-us': typeof JoinUsIndexRoute
   '/team': typeof TeamIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/events/$eventId': typeof EventsEventIdRoute
   '/events': typeof EventsIndexRoute
+  '/join-us': typeof JoinUsIndexRoute
   '/team': typeof TeamIndexRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,28 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/events/$eventId': typeof EventsEventIdRoute
   '/events/': typeof EventsIndexRoute
+  '/join-us/': typeof JoinUsIndexRoute
   '/team/': typeof TeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/events/$eventId' | '/events' | '/team'
+  fullPaths: '/' | '/events/$eventId' | '/events' | '/join-us' | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/events/$eventId' | '/events' | '/team'
-  id: '__root__' | '/' | '/events/$eventId' | '/events/' | '/team/'
+  to: '/' | '/events/$eventId' | '/events' | '/join-us' | '/team'
+  id:
+    | '__root__'
+    | '/'
+    | '/events/$eventId'
+    | '/events/'
+    | '/join-us/'
+    | '/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EventsEventIdRoute: typeof EventsEventIdRoute
   EventsIndexRoute: typeof EventsIndexRoute
+  JoinUsIndexRoute: typeof JoinUsIndexRoute
   TeamIndexRoute: typeof TeamIndexRoute
 }
 
@@ -83,6 +99,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join-us/': {
+      id: '/join-us/'
+      path: '/join-us'
+      fullPath: '/join-us'
+      preLoaderRoute: typeof JoinUsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events/': {
@@ -106,6 +129,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EventsEventIdRoute: EventsEventIdRoute,
   EventsIndexRoute: EventsIndexRoute,
+  JoinUsIndexRoute: JoinUsIndexRoute,
   TeamIndexRoute: TeamIndexRoute,
 }
 export const routeTree = rootRouteImport
