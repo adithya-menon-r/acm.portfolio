@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { Calendar, Home, Menu, UserPlus, Users, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +21,15 @@ export default function Navbar() {
   useEffect(() => {
     if (!isOpen) return;
 
-    const close = () => setIsOpen(false);
+    const close = (e?: Event) => {
+      if (
+        e?.type === "touchstart" &&
+        buttonRef.current?.contains(e.target as Node)
+      ) {
+        return;
+      }
+      setIsOpen(false);
+    };
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
@@ -107,6 +116,7 @@ export default function Navbar() {
         </nav>
 
         <button
+          ref={buttonRef}
           type="button"
           onClick={() => setIsOpen(!isOpen)}
           className="rounded-lg p-2 text-black transition-colors hover:bg-gray-100 md:hidden"
@@ -117,11 +127,11 @@ export default function Navbar() {
       </header>
 
       <div
-        className={`fixed top-[71px] left-0 z-50 w-full rounded-b-2xl bg-white text-black shadow-[0_8px_16px_-4px_rgba(0,0,0,0.18)] transition-all duration-300 ease-in-out md:hidden ${
+        className={`fixed top-[70px] left-0 z-50 w-full rounded-b-2xl bg-white text-black shadow-[0_8px_16px_-4px_rgba(0,0,0,0.18)] transition-all duration-300 ease-in-out md:hidden ${
           isOpen ? "max-h-96" : "max-h-0"
         } overflow-hidden`}
       >
-        <nav className="flex flex-col p-4 text-black">
+        <nav className="flex flex-col p-4 pt-0 text-black">
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
@@ -168,7 +178,7 @@ export default function Navbar() {
             }}
           >
             <UserPlus size={20} />
-            <span className="font-medium">Join</span>
+            <span className="font-medium">Join Us</span>
           </Link>
         </nav>
       </div>
