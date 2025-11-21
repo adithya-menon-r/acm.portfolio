@@ -224,32 +224,18 @@ function App() {
       <section className="w-full bg-white pt-2 pb-3 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
           <div className="grid grid-cols-2 gap-5 text-center md:grid-cols-4 md:gap-6">
-            {/* Years Active */}
+            {/* Events */}
             <div className="flex flex-col items-center justify-center">
               <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
                 <AnimatedStat
-                  stat={{ value: 1 }}
+                  stat={{ value: 10, prefix: "", suffix: "+" }}
                   plainDigits
                   digitClass="text-3xl md:text-4xl"
                   tightSuffix
                 />
               </span>
               <span className="text-base font-medium text-zinc-700 md:text-lg dark:text-zinc-200">
-                Year Active
-              </span>
-            </div>
-            {/* Members */}
-            <div className="flex flex-col items-center justify-center">
-              <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
-                <AnimatedStat
-                  stat={{ value: 35, prefix: "", suffix: "+" }}
-                  plainDigits
-                  digitClass="text-3xl md:text-4xl"
-                  tightSuffix
-                />
-              </span>
-              <span className="text-base font-medium text-zinc-700 md:text-lg dark:text-zinc-200">
-                Members
+                Events
               </span>
             </div>
             {/* Participants */}
@@ -266,18 +252,32 @@ function App() {
                 Participants
               </span>
             </div>
-            {/* Events */}
+            {/* Members */}
             <div className="flex flex-col items-center justify-center">
               <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
                 <AnimatedStat
-                  stat={{ value: 10, prefix: "", suffix: "+" }}
+                  stat={{ value: 40, prefix: "", suffix: "+" }}
                   plainDigits
                   digitClass="text-3xl md:text-4xl"
                   tightSuffix
                 />
               </span>
               <span className="text-base font-medium text-zinc-700 md:text-lg dark:text-zinc-200">
-                Events
+                Members
+              </span>
+            </div>
+            {/* Years Active */}
+            <div className="flex flex-col items-center justify-center">
+              <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
+                <AnimatedStat
+                  stat={{ value: 1 }}
+                  plainDigits
+                  digitClass="text-3xl md:text-4xl"
+                  tightSuffix
+                />
+              </span>
+              <span className="text-base font-medium text-zinc-700 md:text-lg dark:text-zinc-200">
+                Year Active
               </span>
             </div>
           </div>
