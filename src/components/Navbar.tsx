@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Calendar, Home, Menu, Users, X } from "lucide-react";
+import { Calendar, Home, Menu, Users, UserPlus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -97,6 +97,13 @@ export default function Navbar() {
           >
             Team
           </Link>
+          <Link
+            to="/join-us"
+            activeProps={activeLinkProps}
+            inactiveProps={inactiveLinkProps}
+          >
+            Join
+          </Link>
         </nav>
 
         <button
@@ -150,6 +157,18 @@ export default function Navbar() {
           >
             <Users size={20} />
             <span className="font-medium">Team</span>
+          </Link>
+          <Link
+            to="/join"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 rounded-lg py-3 text-black transition-colors hover:bg-gray-100"
+            activeProps={{
+              className:
+                "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
+            }}
+          >
+            <UserPlus size={20} />
+            <span className="font-medium">Join</span>
           </Link>
         </nav>
       </div>
