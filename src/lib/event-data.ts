@@ -252,22 +252,21 @@ export const eventDb: Record<string, Event> = {
     ],
   },
 
-  "rainstorm-workshop": {
-    //events/rainstorm-workshop is the route
-    name: "Rainstorm System Design Workshop",
+  "blueprint-workshop": {
+    //events/blueprint-workshop is the route
+    name: "Blueprint System Design Workshop",
     category: "Workshop",
     sortDate: "2025/11/26",
     displayDate: "26 Nov 2025",
     details: "26th November 2025 | Anugraha Hall, Academic Block 3",
     report:
       `System design can feel abstract until you start reverse engineering a real world problem, which is exactly why we spent time tearing down Rainstorm's P2P architecture. We explored its decentralised model to better understand how distributed systems maintain robustness without a central point of failure. By analysing the differences between peer-to-peer and traditional client-server setups, we got a clear look at the engineering decisions that go into building fault tolerant networks. The session wasn't just theory. We dug into the actual code structure, using Go to see how concepts like concurrency and file chunking are implemented in practice. We walked through the architectural diagrams and code to see how trackers, peers, and checksums interact live. It was a solid, hands-on way to bridge the gap between high level system design concepts and the clean code required to make them scalable.`,
-    mainImage: "/events/rainstorm-workshop/rainstorm-workshop-1.jpg",
+    mainImage: "/events/blueprint-workshop/blueprint-workshop-1.jpg",
     stats: [{ prefix: "Seeded Ideas to Over ", value: 50, suffix: " Active Peers in the Network" }],
     gallery: [
-      "/events/rainstorm-workshop/rainstorm-workshop-2.jpg",
-      "/events/rainstorm-workshop/rainstorm-workshop-3.jpg",
-      "/events/rainstorm-workshop/rainstorm-workshop-4.jpg",
-      "/events/rainstorm-workshop/rainstorm-workshop-5.jpg",
+      "/events/blueprint-workshop/blueprint-workshop-2.jpg",
+      "/events/blueprint-workshop/blueprint-workshop-3.jpg",
+      "/events/blueprint-workshop/blueprint-workshop-4.jpg",
     ],
     tags: [
       "#SystemDesign",
