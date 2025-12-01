@@ -75,12 +75,12 @@ export default function Navbar() {
             <img
               src="/acm_logo.png"
               alt="ACM Logo"
-              className="my-auto h-10 md:h-12"
+              className="my-auto h-11 md:h-13"
             />
             <img
               src="/amrita_logo.svg"
               alt="Amrita Logo"
-              className="my-auto h-8 md:h-10"
+              className="my-auto h-9 md:h-11"
             />
           </Link>
         </div>
