@@ -97,7 +97,13 @@ export const eventDb: Record<string, Event> = {
     details: "4th March 2025 | Academic Block 3",
     report:
       "The CS101 series of events ended with a bang that was the Hack101 event. Hack 101 was a 12-hour hackathon where participants flexed the skills they learnt in the workshops leading up to the event. The hackathon was completely open and participants built a wide variety of projects on a wide range of topics from 2D platformers to movie recommendation systems. The winners were awarded with cash prizes and certificates. ",
-    mainImage: "/events/hack-101-hackathon.jpg",
+    mainImage: "/events/hack-101-hackathon/hack-101-1.jpg",
+    gallery: [
+      "/events/hack-101-hackathon/hack-101-2.JPG",
+      "/events/hack-101-hackathon/hack-101-3.JPG",
+      "/events/hack-101-hackathon/hack-101-4.JPG",
+      "/events/hack-101-hackathon/hack-101-5.JPG",
+    ],
     stats: [
       { value: 80, prefix: "Upwards of ", suffix: " People Participated" },
     ],
