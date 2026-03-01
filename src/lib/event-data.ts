@@ -293,4 +293,27 @@ export const eventDb: Record<string, Event> = {
       "#Golang"
     ],
   },
+
+  "java-basics-workshop": {
+    //events/java-basics-workshop is the route
+    name: "Java Basics Workshop",
+    category: "Workshop",
+    sortDate: "2026/02/05",
+    displayDate: "05 Feb 2026",
+    details: "5th February 2026 | Anugraha Hall, Academic Block 3",
+    report:
+      "The session aimed to equip students with foundational programming skills and essential career guidance, successfully bridging the gap between academic learning and industry expectations.\n\nThe workshop kicked off with an engaging overview of Java's relevance in today's software industry. Students were introduced to essential concepts in a simple, digestible way, covering basic syntax, data types, control structures, and Object-Oriented Programming principles. Beyond writing code, the session focused heavily on career preparation. Students received actionable advice on how to leverage Java in technical interviews, along with strategies for effective learning and skill development.\n\nThe event concluded with an active Q&A session where participants were highly engaged, stepping up to clarify their technical queries and solidify their understanding. To ensure continuous learning, participants were given access to a curated GitHub repository serving as a self-paced learning hub. This repository features foundational resources, practice assignments, reference materials, and an introduction to advanced Java topics to help students strengthen their knowledge independently.",
+    mainImage: "/events/java-basics-workshop.png",
+    stats: [{ prefix: "Over ", value: 100, suffix: " Students Inherited the Basics" }],
+    tags: [
+      "#Java",
+      "#ACM",
+      "#Amrita",
+      "#Java",
+      "#OOP",
+      "#CareerGuidance",
+      "#Placements",
+      "#Workshop",
+    ],
+  },
 };
