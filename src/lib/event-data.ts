@@ -316,4 +316,33 @@ export const eventDb: Record<string, Event> = {
       "#Workshop",
     ],
   },
+
+  "girls-hackathon-2026": {
+    //events/girls-hackathon-2026 is the route
+    name: "Girl's Hackathon 2026",
+    category: "Hackathon",
+    sortDate: "2026/02/19",
+    displayDate: "19 Feb 2026",
+    details: "19th February 2026 | Seminar Hall, Academic Block 3",
+    report:
+      "The Amrita Vishwa Vidyapeetham ACM Student Chapter organised a 12-hour Girls Hackathon on February 19, 2026, aimed at encouraging innovation, hands-on learning, and collaborative problem-solving among female developers from 1st, 2nd, and 3rd years. A total of 32 teams participated, with team sizes ranging from 1 to 3 members, supported by a team of 5 ACM volunteers.\n\nTo promote spontaneous creativity, the problem themes were revealed only during the inauguration. The three themes were:\n- Tech for Good - solutions focused on social, environmental, or community impact\n- Tech for Fun - engaging and interactive digital applications\n- Tech for Proving Developer Skills - projects showcasing technical depth using Blockchain, AI, and ML\n\nTeams were given 1.5 hours for brainstorming before moving into the development phase.\n\nThe evaluation was conducted in three rounds. The first two rounds focused on idea clarity and development progress, with mentorship provided throughout. In the final round, 6 shortlisted teams presented their projects before faculty judges. Projects were evaluated based on technical excellence, uniqueness of the problem statement, and novelty.",
+    mainImage: "/events/girls-hackathon-2026/girls-hackathon-2026-1.jpg",
+    sponsors: ["/events/girls-hackathon-2026/tartlabs-sponsor.jpeg"],
+    stats: [{ value: 32, suffix: " Teams Competed" }],
+    gallery: [
+      "/events/girls-hackathon-2026/girls-hackathon-2026-2.jpg",
+      "/events/girls-hackathon-2026/girls-hackathon-2026-3.jpg",
+      "/events/girls-hackathon-2026/girls-hackathon-2026-4.jpg",
+      "/events/girls-hackathon-2026/girls-hackathon-2026-5.jpg",
+    ],
+    tags: [
+      "#GirlsHackathon",
+      "#Hackathon",
+      "#ACM",
+      "#Amrita",
+      "#WomenInTech",
+      "#Innovation",
+      "#TechForGood",
+    ],
+  },
 };
