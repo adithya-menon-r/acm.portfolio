@@ -42,7 +42,7 @@ function App() {
         <div className="relative z-10 flex min-h-[80vh] items-center justify-center pt-[var(--navbar-height)] md:min-h-[100vh]">
           <div className="flex w-full flex-col items-center gap-6 px-3 text-center">
             <motion.h1
-              className="font-syne text-4xl font-extrabold md:text-7xl"
+              className="font-syne text-4xl font-extrabold md:text-7xl xl:text-8xl"
               {...fadeUp}
             >
               Amrita ACM Student Chapter
@@ -242,7 +242,7 @@ function App() {
             <div className="flex flex-col items-center justify-center">
               <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
                 <AnimatedStat
-                  stat={{ value: 1000, prefix: "", suffix: "+" }}
+                  stat={{ value: 1500, prefix: "", suffix: "+" }}
                   plainDigits
                   digitClass="text-3xl md:text-4xl"
                   tightSuffix
