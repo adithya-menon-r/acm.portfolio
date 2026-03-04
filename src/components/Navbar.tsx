@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Calendar, Home, Menu, UserPlus, Users, X } from "lucide-react";
+import { Calendar, GraduationCap, Home, Menu, UserPlus, Users, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
@@ -107,6 +107,13 @@ export default function Navbar() {
             Team
           </Link>
           <Link
+            to="/alumni"
+            activeProps={activeLinkProps}
+            inactiveProps={inactiveLinkProps}
+          >
+            Alumni
+          </Link>
+          <Link
             to="/join-us"
             activeProps={activeLinkProps}
             inactiveProps={inactiveLinkProps}
@@ -167,6 +174,18 @@ export default function Navbar() {
           >
             <Users size={20} />
             <span className="font-medium">Team</span>
+          </Link>
+          <Link
+            to="/alumni"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 rounded-lg py-3 text-black transition-colors hover:bg-gray-100"
+            activeProps={{
+              className:
+                "flex items-center gap-3 py-3 rounded-lg text-black font-bold",
+            }}
+          >
+            <GraduationCap size={20} />
+            <span className="font-medium">Alumni</span>
           </Link>
           <Link
             to="/join-us"
