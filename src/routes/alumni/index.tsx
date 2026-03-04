@@ -187,7 +187,7 @@ function RouteComponent() {
         {/* Card Grid */}
         <div
           key={selectedYear}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-7 px-4 sm:px-8 md:px-16 mt-4 w-full max-w-[calc(3*280px+2*28px)] justify-items-center"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-7 px-4 sm:px-8 md:px-0 mt-4 w-full max-w-[912px] justify-items-center"
         >
           {members.map((person, idx) => (
             <AlumniCard
