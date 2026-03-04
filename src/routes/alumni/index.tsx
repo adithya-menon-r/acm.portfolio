@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useRef } from "react";
-import { Calendar } from "lucide-react";
-import { type MotionProps, motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { Calendar, ChevronDown } from "lucide-react";
+import { type MotionProps, motion, AnimatePresence } from "framer-motion";
 import { AlumniData } from "@/lib/alumni-details";
 import type { AlumniPerson } from "@/lib/alumni-details";
 
@@ -23,28 +23,41 @@ const placeholders = [
   "https://ubveu2ibt1.ufs.sh/f/X8HcF4epeALsS1RFkLQ1JqWxis3a59BfhvSCQebw8rcLtlRM",
 ];
 
-// Stable random placeholder per card instance — avoids re-randomising on re-render
+
 function usePlaceholder() {
   return useRef(
     placeholders[Math.floor(Math.random() * placeholders.length)]
   ).current;
 }
 
+function useMobile() {
+  const [mobile, setMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const handler = (e: MediaQueryListEvent) => setMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return mobile;
+}
+
 function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) {
   const { name, photo, title, duration } = person;
   const placeholder = usePlaceholder();
+  const isMobile = useMobile();
 
   return (
     <motion.div
-      // Slide up animation
-      initial={{ y: 40 }}
+      initial={{ y: isMobile ? 0 : 40 }}
       animate={{ y: 0 }}
       transition={{
-        duration: 0.15,
-        delay: index * 0.05,
+        duration: 0.35,
+        delay: isMobile ? 0 : index * 0.05,
         ease: [0.33, 1, 0.68, 1],
       }}
-      className="group relative h-80 w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
+      className="group relative h-64 w-full md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
     >
       {/* Photo */}
       <div className="pointer-events-none h-full w-full overflow-hidden">
@@ -80,13 +93,15 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
 
 function RouteComponent() {
   const [selectedYear, setSelectedYear] = useState(AlumniData[0].year);
+  const [isOpen, setIsOpen] = useState(false);
 
   const currentYear = AlumniData.find((y) => y.year === selectedYear);
   const members = currentYear?.members ?? [];
 
-  const rows = Array.from({ length: Math.ceil(members.length / 3) }, (_, i) =>
-    members.slice(i * 3, i * 3 + 3)
-  );
+  function handleYearSelect(year: string) {
+    setSelectedYear(year);
+    setIsOpen(false);
+  }
 
   return (
     <section className="flex min-h-full flex-col items-center justify-center gap-5 py-15 pt-8">
@@ -104,40 +119,82 @@ function RouteComponent() {
           Past office-bearers of ACM Student Chapter
         </motion.p>
 
-        {/* Year Tabs */}
-        <motion.div {...fadeUp} className="flex flex-wrap justify-center gap-2 px-4">
-          {AlumniData.map((yearData) => (
+        {/* Year selector - dropdown on mobile and tabs on desktop*/}
+        <motion.div {...fadeUp} className="w-full flex justify-center px-4">
+          {/* Mobile custom dropdown */}
+          <div className="relative md:hidden w-full max-w-xs">
             <button
-              key={yearData.year}
               type="button"
-              onClick={() => setSelectedYear(yearData.year)}
-              className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-200 ease-in-out cursor-pointer
-                ${
-                  selectedYear === yearData.year
-                    ? "border-[#212529] bg-[#212529] text-white shadow-sm"
-                    : "border-zinc-200 bg-white text-black/60 hover:border-zinc-400 hover:text-black"
-                }`}
+              onClick={() => setIsOpen((o) => !o)}
+              className={`w-full flex items-center justify-between border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-black cursor-pointer transition-all duration-200 hover:border-zinc-300 ${isOpen ? "rounded-t-2xl rounded-b-none border-b-0" : "rounded-full"}`}
             >
-              {yearData.year}
+              <span>{selectedYear}</span>
+              <ChevronDown
+                size={16}
+                className={`ml-2 text-black/50 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+              />
             </button>
-          ))}
+
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scaleY: 0.92 }}
+                  animate={{ opacity: 1, scaleY: 1 }}
+                  exit={{ opacity: 0, scaleY: 0.92 }}
+                  transition={{ duration: 0.18, ease: [0.33, 1, 0.68, 1] }}
+                  style={{ originY: 0 }}
+                  className="absolute z-20 w-full rounded-b-2xl border border-zinc-200 bg-white shadow-md overflow-hidden"
+                >
+                  {AlumniData.map((yearData) => (
+                    <button
+                      key={yearData.year}
+                      type="button"
+                      onClick={() => handleYearSelect(yearData.year)}
+                      className={`w-full text-left px-5 py-2.5 text-sm font-medium transition-colors duration-150 cursor-pointer
+                        ${selectedYear === yearData.year
+                          ? "bg-[#212529] text-white"
+                          : "text-black hover:bg-zinc-50"
+                        }`}
+                    >
+                      {yearData.year}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Desktop pill tabs */}
+          <div className="hidden md:flex flex-wrap justify-center gap-2">
+            {AlumniData.map((yearData) => (
+              <button
+                key={yearData.year}
+                type="button"
+                onClick={() => setSelectedYear(yearData.year)}
+                className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-200 ease-in-out cursor-pointer
+                  ${
+                    selectedYear === yearData.year
+                      ? "border-[#212529] bg-[#212529] text-white shadow-sm"
+                      : "border-zinc-200 bg-white text-black/60 hover:border-zinc-400 hover:text-black"
+                  }`}
+              >
+                {yearData.year}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         {/* Card Grid */}
         <div
           key={selectedYear}
-          className="flex flex-col items-center gap-7 px-8 md:px-16 mt-4"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-7 px-4 sm:px-8 md:px-16 mt-4 w-full max-w-[calc(3*280px+2*28px)] justify-items-center"
         >
-          {rows.map((row, rowIdx) => (
-            <div key={rowIdx} className="flex justify-center gap-7">
-              {row.map((person, colIdx) => (
-                <AlumniCard
-                  key={`${person.name}-${person.title}`}
-                  person={person}
-                  index={rowIdx * 3 + colIdx}
-                />
-              ))}
-            </div>
+          {members.map((person, idx) => (
+            <AlumniCard
+              key={`${person.name}-${person.title}`}
+              person={person}
+              index={idx}
+            />
           ))}
         </div>
       </section>
