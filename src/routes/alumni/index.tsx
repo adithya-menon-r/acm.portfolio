@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef, useEffect } from "react";
-import { Calendar, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { type MotionProps, motion, AnimatePresence } from "framer-motion";
 import { AlumniData } from "@/lib/alumni-details";
 import type { AlumniPerson } from "@/lib/alumni-details";
@@ -44,7 +44,7 @@ function useMobile() {
 }
 
 function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) {
-  const { name, photo, title, duration } = person;
+  const { name, photo, title } = person;
   const placeholder = usePlaceholder();
   const isMobile = useMobile();
 
@@ -57,7 +57,7 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
         delay: isMobile ? 0 : index * 0.05,
         ease: [0.33, 1, 0.68, 1],
       }}
-      className="group relative h-64 w-full md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
+      className="group relative h-64 w-full sm:w-[calc(50%-0.625rem)] md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
     >
       {/* Photo */}
       <div className="pointer-events-none h-full w-full overflow-hidden">
@@ -66,12 +66,6 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
           src={photo ?? placeholder}
           alt={name}
         />
-      </div>
-
-      {/* Duration badge */}
-      <div className="absolute top-2 left-2 z-10 flex items-center gap-2 bg-[#212529] rounded-4xl px-2 py-1 text-white">
-        <Calendar size={15} color="#ffffff" />
-        <p className="font-geist text-[0.7rem] font-bold">{duration}</p>
       </div>
 
       {/* Name and Title panel */}
@@ -92,7 +86,7 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
 }
 
 function RouteComponent() {
-  const [selectedYear, setSelectedYear] = useState(AlumniData[0].year);
+  const [selectedYear, setSelectedYear] = useState("2024 - 2025");
   const [isOpen, setIsOpen] = useState(false);
 
   const currentYear = AlumniData.find((y) => y.year === selectedYear);
@@ -187,7 +181,7 @@ function RouteComponent() {
         {/* Card Grid */}
         <div
           key={selectedYear}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-7 px-4 sm:px-8 md:px-0 mt-4 w-full max-w-[912px] justify-items-center"
+          className="flex flex-wrap justify-center gap-5 md:gap-7 px-4 sm:px-8 md:px-0 mt-4 w-full max-w-[912px]"
         >
           {members.map((person, idx) => (
             <AlumniCard
