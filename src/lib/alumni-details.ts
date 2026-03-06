@@ -30,6 +30,7 @@ export const AlumniData: AlumniYear[] = [
         name: "Deepika J",
         photo: "/alumni/2020-21/deepika-j.jpg",
         title: "Secretary",
+        social: "https://www.linkedin.com/in/deepika-jyothishkumar-08911317b/",
       },
       {
         name: "Hemanth Duddu",
