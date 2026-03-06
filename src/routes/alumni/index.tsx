@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import { type MotionProps, motion, AnimatePresence } from "framer-motion";
 import { AlumniData } from "@/lib/alumni-details";
 import type { AlumniPerson } from "@/lib/alumni-details";
@@ -44,12 +44,14 @@ function useMobile() {
 }
 
 function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) {
-  const { name, photo, title } = person;
+  const { name, photo, title, social } = person;
   const placeholder = usePlaceholder();
   const isMobile = useMobile();
 
   return (
-    <motion.div
+    <motion.a
+      href={social ?? undefined}
+      target={social ? "_blank" : undefined}
       initial={{ y: isMobile ? 0 : 40 }}
       animate={{ y: 0 }}
       transition={{
@@ -57,7 +59,7 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
         delay: isMobile ? 0 : index * 0.05,
         ease: [0.33, 1, 0.68, 1],
       }}
-      className="group relative h-90 w-full sm:w-[calc(50%-0.625rem)] md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
+      className={`group relative h-90 w-full sm:w-[calc(50%-0.625rem)] md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md${social ? " cursor-pointer" : " cursor-default"}`}
     >
       {/* Photo */}
       <div className="pointer-events-none h-full w-full overflow-hidden">
@@ -67,6 +69,13 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
           alt={name}
         />
       </div>
+
+      {/* External link arrow */}
+      {social && (
+        <div className="pointer-events-none absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-white opacity-0 shadow-md transition-all duration-500 ease-in-out group-hover:top-3 group-hover:right-3 group-hover:opacity-100">
+          <ExternalLink size={18} color="#000000" />
+        </div>
+      )}
 
       {/* Name and Title panel */}
       <div className="absolute bottom-3 flex h-15 w-[92%] items-center justify-center rounded-xl bg-white px-5 shadow-md">
@@ -81,7 +90,7 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
           )}
         </span>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
