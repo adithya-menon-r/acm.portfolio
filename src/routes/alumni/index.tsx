@@ -57,7 +57,7 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
         delay: isMobile ? 0 : index * 0.05,
         ease: [0.33, 1, 0.68, 1],
       }}
-      className="group relative h-64 w-full sm:w-[calc(50%-0.625rem)] md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
+      className="group relative h-90 w-full sm:w-[calc(50%-0.625rem)] md:h-80 md:w-70 flex-col overflow-hidden rounded-2xl border flex items-center transition-all duration-500 ease-in-out select-none hover:shadow-md"
     >
       {/* Photo */}
       <div className="pointer-events-none h-full w-full overflow-hidden">
