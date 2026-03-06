@@ -95,7 +95,7 @@ export const AlumniData: AlumniYear[] = [
       },
       {
         name: "Gomathi",
-        photo: null,
+        photo: "/alumni/2022-23/gomathi.jpg",
         title: "Membership Chairperson",
       },
       {
