@@ -2,8 +2,6 @@
 
 The official website for the **ACM Student Chapter** at Amrita Vishwa Vidyapeetham, Coimbatore.
 
-![Portfolio](https://github.com/user-attachments/assets/91b1f447-f970-44aa-890d-4d1455df29fb)
-
 ## Getting Started
 
 1. Clone the repository and navigate to project directory:
