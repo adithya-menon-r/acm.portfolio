@@ -23,7 +23,6 @@ The official website for the **ACM Student Chapter** at Amrita Vishwa Vidyapeeth
    bun dev
    ```
 
-
 ## License
 
 This project is licensed under the [MIT LICENSE](LICENSE).
