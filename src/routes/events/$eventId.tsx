@@ -38,7 +38,7 @@ function EventDetailComponent() {
             alt={event.name}
             loading="eager"
             decoding="async"
-            className="h-[300px] w-full rounded-xl object-cover shadow-lg md:h-[550px]"
+            className="h-[300px] w-full rounded-xl object-cover shadow-lg md:h-[565px]"
             {...fadeUp}
           />
         </motion.div>
