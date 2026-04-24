@@ -242,7 +242,7 @@ function App() {
             <div className="flex flex-col items-center justify-center">
               <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
                 <AnimatedStat
-                  stat={{ value: 1500, prefix: "", suffix: "+" }}
+                  stat={{ value: 1600, prefix: "", suffix: "+" }}
                   plainDigits
                   digitClass="text-3xl md:text-4xl"
                   tightSuffix
@@ -270,14 +270,14 @@ function App() {
             <div className="flex flex-col items-center justify-center">
               <span className="font-geist mb-1 text-3xl font-bold md:text-4xl">
                 <AnimatedStat
-                  stat={{ value: 1 }}
+                  stat={{ value: 2 }}
                   plainDigits
                   digitClass="text-3xl md:text-4xl"
                   tightSuffix
                 />
               </span>
               <span className="text-base font-medium text-zinc-700 md:text-lg dark:text-zinc-200">
-                Year Active
+                Years Active
               </span>
             </div>
           </div>
