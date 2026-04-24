@@ -59,7 +59,7 @@ export const eventDb: Record<string, Event> = {
     name: "Winter of Code 2024-25",
     category: "Challenge",
     sortDate: "2024/12/17",
-    displayDate: "Winter 2024",
+    displayDate: "Winter 2024-25",
     details: "17th Dec 2024 - 5th Mar 2025",
     report:
       "The Winter of Code held at ACM Amrita!, this was an open-source coding challenge to the participants. Developers contributed to a range of exciting projects, collaborating, and pushed their skills to new heights. A gamified leaderboard system kept the competition fierce, with participants vying for top spots through consistent contributions and innovative solutions. The event not only fostered a spirit of community and learning but also highlighted the power of open-source collaboration in driving technological advancement.",
@@ -292,6 +292,19 @@ export const eventDb: Record<string, Event> = {
       "#Workshop",
       "#Golang"
     ],
+  },
+
+  "winter-of-code-2026": {
+    //events/winter-of-code-2026 is the route
+    name: "Winter of Code 2026",
+    category: "Challenge",
+    sortDate: "2026/01/03",
+    displayDate: "Winter 2025-26",
+    details: "03rd Jan 2026 - 9th Jan 2026",
+    report: "Following the tremendous success of the first edition, we knew we had to bring Winter of Code back. This time, we collaborated with Anokha 2026, our campus's annual national-level techfest, to bring our event to a much larger stage. This allowed us to expand our participant base well beyond just our own campus. We decided to cap registrations at exactly 100 participants - and every single spot filled up within just a few days. It was awesome to see that level of enthusiasm from the community right out of the gate.\n\nBecause the timeline was a lot tighter this year, we decided to switch to a sprint strategy. Instead of issues being claimed on a first-come, first-served basis, we left them open for anyone to grab at any time. It turned into a fast paced race: the first PR that met all the maintainer's criteria got merged and scored the bounty. To handle the strategy shift, the chaos of an expanded project list, and multiple devs racing for the same issues, we shipped a fully redesigned platform. We integrated repo and issue search features right into the platform so participants could find what they needed in one place. We also deployed our custom GitHub bot to automate workflows and take the manual load off our maintainers. Watching the participants thrive under the sprint pressure was a great reminder of the core spirit of open-source - bringing developers together to collaborate, learn, and build.",
+    mainImage: "/events/winter-of-code-26.png",
+    stats: [{ prefix: "An Exclusive Cohort of ", value: 100, suffix: " Devs" }],
+    tags: ["#WinterOfCode", "#Anokha26", "#ACM", "#Amrita", "#OpenSource", "#Challenge"],
   },
 
   "java-basics-workshop": {
