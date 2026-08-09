@@ -358,4 +358,33 @@ export const eventDb: Record<string, Event> = {
       "#TechForGood",
     ],
   },
+
+  "works-on-my-machine-docker-workshop": {
+    name: "Works on My Machine – Docker Workshop",
+    category: "Workshop",
+    sortDate: "2026/07/16",
+    displayDate: "16 Jul 2026",
+    details: "16th July 2026 | A104, Academic Block 3",
+    report: "The Amrita Vishwa Vidyapeetham ACM Student Chapter conducted a hands-on Docker Workshop as part of its ongoing workshop series aimed at building practical containerization skills among students. The session drew 40+ participants, primarily second-year CSE students, with Python/Flask used as the running example throughout the hands-on activities.\n The workshop followed a structured, hands-on format: \n -  Check-in and welcome \n - Module presentation covering Dockerfile concepts and best practices \n - Hands-on lab activity interspersed with the presentation, allowing participants to apply concepts as they were introduced \n - Wrap-up with feedback collection via Microsoft Forms and a short introduction to the ACM Student Chapter",
+    mainImage: "/events/docker-workshop/docker-1.jpg",
+    stats: [{ value: 40, suffix: " + Participants" }],
+    gallery: [
+      "/events/docker-workshop/docker-2.jpg",
+      "/events/docker-workshop/docker-3.jpg",
+      "/events/docker-workshop/docker-4.jpg",
+      "/events/docker-workshop/docker-5.jpg",
+      "/events/docker-workshop/docker-6.jpg",
+      "/events/docker-workshop/docker-7.jpg",
+      "/events/docker-workshop/docker-8.jpg",
+      "/events/docker-workshop/docker-9.jpg",
+      "/events/docker-workshop/docker-10.jpg",
+    ],
+    tags: [
+      "#Docker",
+      "#DevOps",
+      "#Workshop",
+      "#ACM",
+      "#Amrita"
+    ],
+  },
 };

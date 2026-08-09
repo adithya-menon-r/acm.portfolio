@@ -142,16 +142,50 @@ function JoinUsComponent() {
               </p>
             </div>
 
-            <TimelineStep number="1" title="Get Your ACM India Membership">
+            <TimelineStep number="1" title="Fill out the Registration Form">
               <p>
-                To become a member of the local chapter, you first need an{" "}
-                <strong>ACM India Student Membership</strong>.
+                To begin the joining process, you must first complete the registration form.
               </p>
-              <ul className="space-y-2">
+              <div className="mt-2 flex items-start gap-2">
+                <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-zinc-400" />
+                <p>
+                  <a
+                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o835AF4H5USqC6ujrdZTnxl2HayiIKlMqFmuUSSmg19UM0JHMU5DNFo5QUcwRVVIR1hIUlZLM0o0SC4u"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-blue-600 hover:underline dark:text-blue-400"
+                  >
+                    Registration Form Link{" "}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </p>
+              </div>
+            </TimelineStep>
+
+            <TimelineStep number="2" title="Interview Process">
+              <p>
+                Applicants who register will go through an interview process with our core team.
+              </p>
+              <ul className="mt-2 space-y-2">
                 <li className="flex items-start gap-2">
                   <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-zinc-400" />
                   <span>
-                    Visit{" "}
+                    Keep an eye on your email for interview scheduling and details.
+                  </span>
+                </li>
+              </ul>
+            </TimelineStep>
+
+            {/* Step 3 */}
+            <TimelineStep number="3" title="Become an ACM Member" isLast={true}>
+              <p>
+                After successfully clearing the interview, complete the final steps:
+              </p>
+              <ul className="mt-2 space-y-2">
+                <li className="flex items-start gap-2">
+                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-zinc-400" />
+                  <span>
+                    <strong>Obtain your ACM India Membership</strong> at{" "}
                     <a
                       href="https://india.acm.org/membership"
                       target="_blank"
@@ -166,50 +200,10 @@ function JoinUsComponent() {
                 <li className="flex items-start gap-2">
                   <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-zinc-400" />
                   <span>
-                    Select <strong>"Student Membership"</strong> and complete
-                    the membership payment.
+                    <strong>Join the Amrita ACM Student Chapter</strong> using your new Membership ID.
                   </span>
                 </li>
               </ul>
-              <div className="mt-2 inline-block rounded-lg border border-blue-100 bg-blue-50 p-3 text-sm text-blue-700 dark:border-blue-800/50 dark:bg-blue-900/20 dark:text-blue-300">
-                <strong>Note:</strong> You will receive a 7-digit Membership ID.
-                Save it!
-              </div>
-            </TimelineStep>
-
-            <TimelineStep number="2" title="Join the Amrita Student Chapter">
-              <p>
-                Use your new Membership ID to officially register with our
-                college chapter.
-              </p>
-              <div className="mt-2 flex items-start gap-2">
-                <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-zinc-400" />
-                <p>
-                  Fill out the{" "}
-                  <a
-                    href="https://forms.microsoft.com/pages/responsepage.aspx?id=o835AF4H5USqC6ujrdZTn_FLxC1OeZtEip5BNnRkDw5UOEdOWk1QN04yUENOUklNU01CWEQ3V0g1QS4u&route=shorturl"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 font-medium text-blue-600 hover:underline dark:text-blue-400"
-                  >
-                    Local Chapter Registration Form{" "}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>{" "}
-                  to link your membership ID with ACM Amrita Student Chapter.
-                </p>
-              </div>
-            </TimelineStep>
-
-            {/* Step 3 */}
-            <TimelineStep number="3" title="Review" isLast={true}>
-              <p>
-                Once you've submitted the form, our team will verify your
-                membership details.
-              </p>
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                We will contact you upon successful verification. If you don't
-                hear from us in a few days, feel free to inform us.
-              </p>
             </TimelineStep>
           </div>
         </section>

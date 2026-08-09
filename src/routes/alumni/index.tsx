@@ -95,7 +95,7 @@ function AlumniCard({ person, index }: { person: AlumniPerson; index: number }) 
 }
 
 function RouteComponent() {
-  const [selectedYear, setSelectedYear] = useState("2024 - 2025");
+  const [selectedYear, setSelectedYear] = useState("2025 - 2026");
   const [isOpen, setIsOpen] = useState(false);
 
   const currentYear = AlumniData.find((y) => y.year === selectedYear);

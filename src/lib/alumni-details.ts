@@ -200,40 +200,63 @@ export const AlumniData: AlumniYear[] = [
       },
     ],
   },
-  // Old site had their data for office bearers but they ain't alumni yet, keeping it to uncomment in future
-  // {
-  //   year: "2025 - 2026",
-  //   members: [
-  //     {
-  //       name: "Aadithyaa Eeswaran",
-  //       photo: "/alumni/2025-26/aadhitya.jpg",
-  //       title: "Chairperson",
-  //       social: "https://www.linkedin.com/in/aadithyaa-eeswaran/",
-  //     },
-  //     {
-  //       name: "Leela Mahalakshmi Marupuru",
-  //       photo: "/alumni/2025-26/leela-m.jpg",
-  //       title: "Vice Chairperson",
-  //       social: "https://www.linkedin.com/in/leela-m-336334301",
-  //     },
-  //     {
-  //       name: "Sarath Chandra",
-  //       photo: "/alumni/2025-26/sarath-chandra.jpg",
-  //       title: "Secretary",
-  //       social: "https://www.linkedin.com/in/sarathcx",
-  //     },
-  //     {
-  //       name: "Sanyam Bhardwaj",
-  //       photo: "/alumni/2025-26/sanyam.jpg",
-  //       title: "Treasurer",
-  //       social: "https://in.linkedin.com/in/sanyam-bhardwaj-04b2a4264",
-  //     },
-  //     {
-  //       name: "Adithya Menon R",
-  //       photo: "/alumni/2025-26/adithya-menon-r.jpg",
-  //       title: "Web Master",
-  //       social: "https://www.linkedin.com/in/adithya-menon-r/",
-  //     },
-  //   ],
-  // },
+  {
+    year: "2025 - 2026",
+    members: [
+      {
+        name: "Aadithyaa Eeswaran",
+        photo: "/alumni/2025-26/aadhitya.jpg",
+        title: "Chairperson",
+        social: "https://www.linkedin.com/in/aadithyaa-eeswaran/",
+      },
+      {
+        name: "Leela Mahalakshmi Marupuru",
+        photo: "/alumni/2025-26/leela-m.jpg",
+        title: "Vice Chairperson",
+        social: "https://www.linkedin.com/in/leela-m-336334301",
+      },
+      {
+        name: "Sarath Chandra",
+        photo: "/alumni/2025-26/sarath-chandra.jpg",
+        title: "Secretary",
+        social: "https://www.linkedin.com/in/sarathcx",
+      },
+      {
+        name: "Sanyam Bhardwaj",
+        photo: "/alumni/2025-26/sanyam.jpg",
+        title: "Treasurer",
+        social: "https://in.linkedin.com/in/sanyam-bhardwaj-04b2a4264",
+      },
+      {
+        name: "Adithya Menon R",
+        photo: "/alumni/2025-26/adithya-menon-r.jpg",
+        title: "Web Master",
+        social: "https://www.linkedin.com/in/adithya-menon-r/",
+      },
+      {
+        name: "I Karthik Saiharsh",
+        photo: "/team/core-team/karthik-saiharsh.jpeg",
+        title: "Design and PR Head",
+        social: "https://github.com/karthik-saiharsh",
+      },
+      {
+        name: "Midhunan V Prabhaharan",
+        photo: "/team/core-team/midhunan-v-prabhaharan.jpg",
+        title: "Event Management Head",
+        social: "https://github.com/midhunann",
+      },
+      {
+        name: "Vasudev Kishor",
+        photo: "/team/core-team/vasudev-kishore.jpg",
+        title: "Media Head",
+        social: "https://in.linkedin.com/in/vasudevkishor",
+      },
+      {
+        name: "Jayadev D",
+        photo: "/team/core-team/jayadev-d.jpg",
+        title: "Assistant Webmaster",
+        social: "https://www.linkedin.com/in/jayadev-d",
+      },
+    ],
+  },
 ];
